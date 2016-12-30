@@ -42,15 +42,22 @@ begin
 	end
 end
 
-always @(K)//TODO fix here!!!!
+always @(negedge reset or posedge K)//TODO fix here!!!!
 begin
 if(!reset)
 	begin
-		pos[0]=0;
+		pos[127:0]=0;
+//		pos[1] = 0;
 	end
 	if(K==1)
-//	pos[16*((index/4)+(State/4))+4*State+index%4] = 1;
-	pos[0] = 1;
+	begin
+		pos[16*((index/4)+(State/4))+4*State+index%4] = 1;
+//		pos[0] = 1;
+	end
+	else
+	begin
+//		pos[1] = 1;
+	end
 end
 
 always @(times)

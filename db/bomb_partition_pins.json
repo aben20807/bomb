@@ -56,6 +56,66 @@
 					"strict" : false
 				},
 				{
+					"name" : "dotC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[10]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[11]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[12]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[13]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[14]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[15]",
+					"strict" : false
+				},
+				{
 					"name" : "dotR[0]",
 					"strict" : false
 				},
@@ -268,11 +328,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "button[1]",
+					"name" : "button[3]",
 					"strict" : false
 				},
 				{
-					"name" : "button[3]",
+					"name" : "button[1]",
 					"strict" : false
 				},
 				{
@@ -284,7 +344,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "keypadC[0]",
+					"name" : "keypadC[3]",
 					"strict" : false
 				},
 				{
@@ -296,7 +356,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "keypadC[3]",
+					"name" : "keypadC[0]",
 					"strict" : false
 				}
 			]
