@@ -1,0 +1,489 @@
+Analysis & Synthesis report for bomb
+Fri Dec 30 13:11:36 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |bomb|State
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |bomb
+ 14. Port Connectivity Checks: "key:comb_3"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Dec 30 13:11:36 2016       ;
+; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                   ; bomb                                        ;
+; Top-level Entity Name           ; bomb                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 240                                         ;
+; Total pins                      ; 89                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; bomb               ; bomb               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path         ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+; bomb.v                           ; yes             ; User Verilog HDL File  ; C:/Users/user/Desktop/project/bomb.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 212         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 381         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 43          ;
+;     -- 5 input functions                    ; 39          ;
+;     -- 4 input functions                    ; 81          ;
+;     -- <=3 input functions                  ; 218         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 240         ;
+;                                             ;             ;
+; I/O pins                                    ; 89          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 212         ;
+; Total fan-out                               ; 2277        ;
+; Average fan-out                             ; 2.85        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |bomb                      ; 381 (153)         ; 240 (102)    ; 0                 ; 0          ; 89   ; 0            ; |bomb               ; bomb        ; work         ;
+;    |Seven:s1|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s1      ; Seven       ; work         ;
+;    |Seven:s2|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s2      ; Seven       ; work         ;
+;    |Seven:s3|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s3      ; Seven       ; work         ;
+;    |Seven:s4|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s4      ; Seven       ; work         ;
+;    |Seven:s5|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s5      ; Seven       ; work         ;
+;    |Seven:s6|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s6      ; Seven       ; work         ;
+;    |key:comb_3|            ; 42 (42)           ; 30 (30)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|key:comb_3    ; key         ; work         ;
+;    |move:comb_655|         ; 36 (36)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_655 ; move        ; work         ;
+;    |move:comb_656|         ; 36 (36)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_656 ; move        ; work         ;
+;    |move:comb_657|         ; 36 (36)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_657 ; move        ; work         ;
+;    |move:comb_658|         ; 36 (36)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_658 ; move        ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------+
+; State Machine - |bomb|State                                                                      ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; State.S7 ; State.S6 ; State.S5 ; State.S4 ; State.S3 ; State.S2 ; State.S1 ; State.S0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; State.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; State.S1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; State.S2 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; State.S3 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; State.S4 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; State.S5 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.S6 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; State.S7 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; dotC[0]$latch                                       ; times[3]            ; yes                    ;
+; dotR[0]$latch                                       ; times[3]            ; yes                    ;
+; dotR[1]$latch                                       ; times[3]            ; yes                    ;
+; dotR[2]$latch                                       ; times[3]            ; yes                    ;
+; dotR[3]$latch                                       ; times[3]            ; yes                    ;
+; dotR[4]$latch                                       ; times[3]            ; yes                    ;
+; dotR[5]$latch                                       ; times[3]            ; yes                    ;
+; dotR[6]$latch                                       ; times[3]            ; yes                    ;
+; dotR[7]$latch                                       ; times[3]            ; yes                    ;
+; pos[0]                                              ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; State~4                               ; Lost fanout        ;
+; State~5                               ; Lost fanout        ;
+; State~6                               ; Lost fanout        ;
+; Total Number of Removed Registers = 3 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 240   ;
+; Number of registers using Synchronous Clear  ; 199   ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 102   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 123   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|key:comb_3|keypadDelay[9]     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bomb|key:comb_3|keypadRow[1]       ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_657|delayButton[6]  ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_655|delayButton[20] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_656|delayButton[0]  ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_658|delayButton[5]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |bomb|NextState                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |bomb ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; S0             ; 0     ; Signed Integer                              ;
+; S1             ; 1     ; Signed Integer                              ;
+; S2             ; 2     ; Signed Integer                              ;
+; S3             ; 3     ; Signed Integer                              ;
+; S4             ; 4     ; Signed Integer                              ;
+; S5             ; 5     ; Signed Integer                              ;
+; S6             ; 6     ; Signed Integer                              ;
+; S7             ; 7     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "key:comb_3"                                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 240                         ;
+;     CLR               ; 18                          ;
+;     CLR SCLR          ; 64                          ;
+;     ENA CLR           ; 20                          ;
+;     ENA SCLR          ; 100                         ;
+;     ENA SLD           ; 3                           ;
+;     SCLR              ; 35                          ;
+; arriav_lcell_comb     ; 389                         ;
+;     arith             ; 189                         ;
+;         1 data inputs ; 189                         ;
+;     normal            ; 200                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 81                          ;
+;         5 data inputs ; 39                          ;
+;         6 data inputs ; 43                          ;
+; boundary_port         ; 89                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.40                        ;
+; Average LUT depth     ; 3.57                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Fri Dec 30 13:11:23 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bomb -c bomb
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 5 design units, including 5 entities, in source file bomb.v
+    Info (12023): Found entity 1: bomb File: C:/Users/user/Desktop/project/bomb.v Line: 1
+    Info (12023): Found entity 2: Seven File: C:/Users/user/Desktop/project/bomb.v Line: 341
+    Info (12023): Found entity 3: move File: C:/Users/user/Desktop/project/bomb.v Line: 369
+    Info (12023): Found entity 4: key File: C:/Users/user/Desktop/project/bomb.v Line: 405
+    Info (12023): Found entity 5: SevenSegment File: C:/Users/user/Desktop/project/bomb.v Line: 541
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(29): instance has no name File: C:/Users/user/Desktop/project/bomb.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(231): instance has no name File: C:/Users/user/Desktop/project/bomb.v Line: 231
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(232): instance has no name File: C:/Users/user/Desktop/project/bomb.v Line: 232
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(233): instance has no name File: C:/Users/user/Desktop/project/bomb.v Line: 233
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(234): instance has no name File: C:/Users/user/Desktop/project/bomb.v Line: 234
+Info (12127): Elaborating entity "bomb" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at bomb.v(41): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(47): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(45): inferring latch(es) for variable "pos", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/project/bomb.v Line: 45
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(58): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(69): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 69
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(74): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 74
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(79): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 79
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(84): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 84
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(89): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 89
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(94): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 94
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(99): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 99
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(104): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/project/bomb.v Line: 104
+Warning (10270): Verilog HDL Case Statement warning at bomb.v(65): incomplete case statement has no default case item File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(56): inferring latch(es) for variable "dotC", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/project/bomb.v Line: 56
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(56): inferring latch(es) for variable "dotR", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/project/bomb.v Line: 56
+Warning (10230): Verilog HDL assignment warning at bomb.v(188): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 188
+Warning (10230): Verilog HDL assignment warning at bomb.v(192): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 192
+Warning (10230): Verilog HDL assignment warning at bomb.v(197): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 197
+Warning (10230): Verilog HDL assignment warning at bomb.v(202): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 202
+Warning (10230): Verilog HDL assignment warning at bomb.v(207): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 207
+Warning (10230): Verilog HDL assignment warning at bomb.v(212): truncated value with size 32 to match size of target (4) File: C:/Users/user/Desktop/project/bomb.v Line: 212
+Warning (10030): Net "pos[127..1]" at bomb.v(22) has no driver or initial value, using a default initial value '0' File: C:/Users/user/Desktop/project/bomb.v Line: 22
+Info (10041): Inferred latch for "dotR[0]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[1]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[2]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[3]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[4]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[5]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[6]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotR[7]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[0]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[1]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[2]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[3]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[4]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[5]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[6]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[7]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[8]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[9]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[10]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[11]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[12]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[13]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[14]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "dotC[15]" at bomb.v(65) File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (10041): Inferred latch for "pos[0]" at bomb.v(51) File: C:/Users/user/Desktop/project/bomb.v Line: 51
+Info (12128): Elaborating entity "key" for hierarchy "key:comb_3" File: C:/Users/user/Desktop/project/bomb.v Line: 29
+Info (12128): Elaborating entity "SevenSegment" for hierarchy "key:comb_3|SevenSegment:seven" File: C:/Users/user/Desktop/project/bomb.v Line: 418
+Info (12128): Elaborating entity "Seven" for hierarchy "Seven:s1" File: C:/Users/user/Desktop/project/bomb.v Line: 223
+Info (12128): Elaborating entity "move" for hierarchy "move:comb_655" File: C:/Users/user/Desktop/project/bomb.v Line: 231
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dotC[1]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[2]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[3]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[4]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[5]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[6]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[7]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[8]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[9]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[10]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[11]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[12]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[13]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[14]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+    Warning (13410): Pin "dotC[15]" is stuck at GND File: C:/Users/user/Desktop/project/bomb.v Line: 65
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/user/Desktop/project/output_files/bomb.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 570 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 78 output pins
+    Info (21061): Implemented 481 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 905 megabytes
+    Info: Processing ended: Fri Dec 30 13:11:37 2016
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:29
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/user/Desktop/project/output_files/bomb.map.smsg.
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="dotC1[7]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[6]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[5]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[4]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[3]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[2]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[1]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC1[0]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[7]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[6]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[5]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[4]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[3]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[2]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[1]" source="Pin Planner" >
+		</pin>
+		<pin name="dotC2[0]" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

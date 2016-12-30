@@ -1,0 +1,305 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dotC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dotR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "stop",
+					"strict" : false
+				},
+				{
+					"name" : "button[1]",
+					"strict" : false
+				},
+				{
+					"name" : "button[3]",
+					"strict" : false
+				},
+				{
+					"name" : "button[0]",
+					"strict" : false
+				},
+				{
+					"name" : "button[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
