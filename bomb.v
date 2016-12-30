@@ -1,4 +1,4 @@
-module bomb(reset, clock, button, stop, led, keypadC, keypadR, dotC, dotR, hex1, hex2, hex3, hex4, hex5, hex6);
+module bomb(reset, clock, button, stop, led, verf,verf1, keypadC, keypadR, dotC, dotR, hex1, hex2, hex3, hex4, hex5, hex6);
 
 input clock, reset, stop;
 input [3:0]button;
@@ -9,6 +9,7 @@ output [15:0]dotC;
 output [7:0]dotR;
 output [6:0]hex1, hex2, hex3, hex4, hex5, hex6;
 output [7:0]led;
+output verf, verf1;
 
 reg [15:0]dotC;
 reg [7:0]dotR;
@@ -20,13 +21,19 @@ reg [3:0]area;
 reg [2:0]State,NextState;
 reg [3:0]times;
 reg [127:0]pos;
+reg second;
+reg verf;
+wire verf1;
+wire [1:0] aa;
 
 wire [3:0]isMove;
 wire [3:0]index;
 wire K;
 parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7;
 
-key(.clk(clock), .rst(reset), .Data(index), .keypadRow(keypadR), .keypadCol(keypadC), .KEY(K));
+assign verf1 = verf;
+
+key(.clk(clock), .rst(reset), .Data(index), .keypadRow(keypadR), .keypadCol(keypadC), .KEY(K), .aa(aa));
 
 /*scan all rows using 10 KHz*/
 always @(negedge reset or posedge div_clk_10k)
@@ -44,19 +51,29 @@ end
 
 always @(negedge reset or posedge K)//TODO fix here!!!!
 begin
-if(!reset)
+	if(!reset)
 	begin
-		pos[127:0]=0;
-//		pos[1] = 0;
-	end
-	if(K==1)
-	begin
-		pos[16*((index/4)+(State/4))+4*State+index%4] = 1;
-//		pos[0] = 1;
+		pos[127:0]<=0;
+		second <= 0;
+		verf = 1;
 	end
 	else
 	begin
-//		pos[1] = 1;
+//		if(second == 0)
+//			begin
+//				second <= 1;
+////				pos[127] <= ~pos[127];
+//				verf <= ~verf;
+//			end
+//		else
+		if(aa == 2)
+		begin
+			pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;//~pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4];
+//			pos[127] <= ~pos[127];
+			verf <= ~verf;
+			second <= 0;
+			
+		end
 	end
 end
 
@@ -232,7 +249,7 @@ Seven s2(.sin(tmp2), .sout(hex2));//s
 Seven s3(.sin(tmp3), .sout(hex3));//m
 Seven s4(.sin(tmp4), .sout(hex4));//m
 Seven s5(.sin(tmp5), .sout(hex5));//h
-Seven s6(.sin(tmp6), .sout(hex6));//h
+Seven s6(.sin(aa), .sout(hex6));//h
 	
 /*call move to detect if move button is click*/
 move(.clk(clock), .rst(reset), .button(button[0]), .LED(isMove[0]));
@@ -408,19 +425,21 @@ end
 endmodule 
 
 /*return index after clicking keypad*/
-`define TimeExpire_KEY 25'b00010000000000000000000000
-module key(clk, rst, Data, keypadRow, keypadCol, KEY);
+`define TimeExpire_KEY 32'd25000000//25'b00100000000000000000000000
+module key(clk, rst, Data, keypadRow, keypadCol, KEY, aa);
 input clk, rst;
 input [3:0]keypadCol;
 	
 output [3:0]keypadRow;
 output [3:0]Data;
 output KEY;
-	
+output [1:0] aa;
+
 reg KEY;
 reg [3:0]keypadRow;
 reg [3:0]keypadBuf;
 reg [24:0]keypadDelay;
+reg [1:0] aa;
 	
 SevenSegment seven(.in(keypadBuf), .out(Data));
 	
@@ -444,86 +463,103 @@ begin
 				begin
 					keypadBuf = 4'h7;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1110_1101 : 
 				begin
 					keypadBuf = 4'h4;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1110_1011 : 
 				begin
 					keypadBuf = 4'h1;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1110_0111 : 
 				begin
 					keypadBuf = 4'h0;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1101_1110 : 
 				begin
 					keypadBuf = 4'h9;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1101_1101 : 
 				begin
 					keypadBuf = 4'h6;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1101_1011 : 
 				begin
 					keypadBuf = 4'h3;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1101_0111 : 
 				begin
 					keypadBuf = 4'hb;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1011_1110 : 
 				begin
 					keypadBuf = 4'h8;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1011_1101 : 
 				begin
 					keypadBuf = 4'h5;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1011_1011 : 
 				begin
 					keypadBuf = 4'h2;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b1011_0111 : 
 				begin
 					keypadBuf = 4'ha;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b0111_1110 : 
 				begin
 					keypadBuf = 4'hc;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b0111_1101 : 
 				begin
 					keypadBuf = 4'hd;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b0111_1011 : 
 				begin
 					keypadBuf = 4'he;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				8'b0111_0111 : 
 				begin
 					keypadBuf = 4'hf;
 					KEY = 1;
+					aa = aa + 1;
 				end
 				default     : 
 				begin
 					keypadBuf = keypadBuf;
 					KEY = 0;
+					aa = 0;
 				end
 			endcase
 			

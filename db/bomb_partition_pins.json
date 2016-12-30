@@ -36,6 +36,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "verf",
+					"strict" : false
+				},
+				{
+					"name" : "verf1",
+					"strict" : false
+				},
+				{
 					"name" : "keypadR[0]",
 					"strict" : false
 				},
@@ -292,10 +300,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "hex6[1]",
-					"strict" : false
-				},
-				{
 					"name" : "hex6[2]",
 					"strict" : false
 				},
@@ -328,6 +332,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "keypadC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keypadC[1]",
+					"strict" : false
+				},
+				{
 					"name" : "button[3]",
 					"strict" : false
 				},
@@ -341,22 +361,6 @@
 				},
 				{
 					"name" : "button[2]",
-					"strict" : false
-				},
-				{
-					"name" : "keypadC[3]",
-					"strict" : false
-				},
-				{
-					"name" : "keypadC[1]",
-					"strict" : false
-				},
-				{
-					"name" : "keypadC[2]",
-					"strict" : false
-				},
-				{
-					"name" : "keypadC[0]",
 					"strict" : false
 				}
 			]

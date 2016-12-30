@@ -1,6 +1,7 @@
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S1" differs only in case from object "s1" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S2" differs only in case from object "s2" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S3" differs only in case from object "s3" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S4" differs only in case from object "s4" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S5" differs only in case from object "s5" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
-Info (10281): Verilog HDL Declaration information at bomb.v(27): object "S6" differs only in case from object "s6" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 27
+Warning (10268): Verilog HDL information at bomb.v(52): always construct contains both blocking and non-blocking assignments File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 52
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S1" differs only in case from object "s1" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S2" differs only in case from object "s2" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S3" differs only in case from object "s3" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S4" differs only in case from object "s4" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S5" differs only in case from object "s5" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32
+Info (10281): Verilog HDL Declaration information at bomb.v(32): object "S6" differs only in case from object "s6" in the same scope File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 32

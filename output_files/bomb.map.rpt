@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bomb
-Fri Dec 30 13:58:08 2016
+Fri Dec 30 18:24:24 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -15,12 +15,14 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |bomb
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |bomb
+ 13. Port Connectivity Checks: "Seven:s6"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,14 +49,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec 30 13:58:08 2016       ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec 30 18:24:24 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; bomb                                        ;
 ; Top-level Entity Name           ; bomb                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 239                                         ;
-; Total pins                      ; 89                                          ;
+; Total registers                 ; 366                                         ;
+; Total pins                      ; 91                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -186,25 +188,25 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 463         ;
+; Estimate of Logic utilization (ALMs needed) ; 360         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 788         ;
-;     -- 7 input functions                    ; 6           ;
-;     -- 6 input functions                    ; 132         ;
-;     -- 5 input functions                    ; 65          ;
-;     -- 4 input functions                    ; 117         ;
-;     -- <=3 input functions                  ; 468         ;
+; Combinational ALUT usage for logic          ; 594         ;
+;     -- 7 input functions                    ; 7           ;
+;     -- 6 input functions                    ; 118         ;
+;     -- 5 input functions                    ; 21          ;
+;     -- 4 input functions                    ; 199         ;
+;     -- <=3 input functions                  ; 249         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 239         ;
+; Dedicated logic registers                   ; 366         ;
 ;                                             ;             ;
-; I/O pins                                    ; 89          ;
+; I/O pins                                    ; 91          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 244         ;
-; Total fan-out                               ; 3820        ;
-; Average fan-out                             ; 3.17        ;
+; Maximum fan-out                             ; 274         ;
+; Total fan-out                               ; 3647        ;
+; Average fan-out                             ; 3.19        ;
 +---------------------------------------------+-------------+
 
 
@@ -213,130 +215,54 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; |bomb                      ; 788 (552)         ; 239 (97)     ; 0                 ; 0          ; 89   ; 0            ; |bomb                ; bomb        ; work         ;
+; |bomb                      ; 594 (360)         ; 366 (222)    ; 0                 ; 0          ; 91   ; 0            ; |bomb                ; bomb        ; work         ;
 ;    |Seven:s1|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s1       ; Seven       ; work         ;
 ;    |Seven:s2|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s2       ; Seven       ; work         ;
 ;    |Seven:s3|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s3       ; Seven       ; work         ;
 ;    |Seven:s4|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s4       ; Seven       ; work         ;
 ;    |Seven:s5|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s5       ; Seven       ; work         ;
-;    |Seven:s6|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s6       ; Seven       ; work         ;
-;    |key:comb_3|            ; 46 (46)           ; 34 (34)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|key:comb_3     ; key         ; work         ;
-;    |move:comb_1404|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1404 ; move        ; work         ;
-;    |move:comb_1405|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1405 ; move        ; work         ;
-;    |move:comb_1406|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1406 ; move        ; work         ;
-;    |move:comb_1407|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1407 ; move        ; work         ;
+;    |Seven:s6|              ; 3 (3)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s6       ; Seven       ; work         ;
+;    |key:comb_4|            ; 48 (48)           ; 36 (36)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|key:comb_4     ; key         ; work         ;
+;    |move:comb_1282|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1282 ; move        ; work         ;
+;    |move:comb_1283|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1283 ; move        ; work         ;
+;    |move:comb_1284|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1284 ; move        ; work         ;
+;    |move:comb_1285|        ; 37 (37)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_1285 ; move        ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                 ;
-+------------------------------------------------------+---------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
-+------------------------------------------------------+---------------------+------------------------+
-; dotC[0]$latch                                        ; times[3]            ; yes                    ;
-; dotC[1]$latch                                        ; times[3]            ; yes                    ;
-; dotC[2]$latch                                        ; times[3]            ; yes                    ;
-; dotC[3]$latch                                        ; times[3]            ; yes                    ;
-; dotC[4]$latch                                        ; times[3]            ; yes                    ;
-; dotC[5]$latch                                        ; times[3]            ; yes                    ;
-; dotC[6]$latch                                        ; times[3]            ; yes                    ;
-; dotC[7]$latch                                        ; times[3]            ; yes                    ;
-; dotC[8]$latch                                        ; times[3]            ; yes                    ;
-; dotC[9]$latch                                        ; times[3]            ; yes                    ;
-; dotC[10]$latch                                       ; times[3]            ; yes                    ;
-; dotC[11]$latch                                       ; times[3]            ; yes                    ;
-; dotC[12]$latch                                       ; times[3]            ; yes                    ;
-; dotC[13]$latch                                       ; times[3]            ; yes                    ;
-; dotC[14]$latch                                       ; times[3]            ; yes                    ;
-; dotC[15]$latch                                       ; times[3]            ; yes                    ;
-; dotR[0]$latch                                        ; times[3]            ; yes                    ;
-; dotR[1]$latch                                        ; times[3]            ; yes                    ;
-; dotR[2]$latch                                        ; times[3]            ; yes                    ;
-; dotR[3]$latch                                        ; times[3]            ; yes                    ;
-; dotR[4]$latch                                        ; times[3]            ; yes                    ;
-; dotR[5]$latch                                        ; times[3]            ; yes                    ;
-; dotR[6]$latch                                        ; times[3]            ; yes                    ;
-; dotR[7]$latch                                        ; times[3]            ; yes                    ;
-; pos[0]                                               ; pos[0]              ; yes                    ;
-; pos[16]                                              ; pos[16]             ; yes                    ;
-; pos[32]                                              ; pos[32]             ; yes                    ;
-; pos[48]                                              ; pos[48]             ; yes                    ;
-; pos[64]                                              ; pos[64]             ; yes                    ;
-; pos[80]                                              ; pos[80]             ; yes                    ;
-; pos[1]                                               ; pos[1]              ; yes                    ;
-; pos[17]                                              ; pos[17]             ; yes                    ;
-; pos[33]                                              ; pos[33]             ; yes                    ;
-; pos[49]                                              ; pos[49]             ; yes                    ;
-; pos[65]                                              ; pos[65]             ; yes                    ;
-; pos[81]                                              ; pos[81]             ; yes                    ;
-; pos[2]                                               ; pos[2]              ; yes                    ;
-; pos[18]                                              ; pos[18]             ; yes                    ;
-; pos[34]                                              ; pos[34]             ; yes                    ;
-; pos[50]                                              ; pos[50]             ; yes                    ;
-; pos[66]                                              ; pos[66]             ; yes                    ;
-; pos[82]                                              ; pos[82]             ; yes                    ;
-; pos[3]                                               ; pos[3]              ; yes                    ;
-; pos[19]                                              ; pos[19]             ; yes                    ;
-; pos[35]                                              ; pos[35]             ; yes                    ;
-; pos[51]                                              ; pos[51]             ; yes                    ;
-; pos[67]                                              ; pos[67]             ; yes                    ;
-; pos[83]                                              ; pos[83]             ; yes                    ;
-; pos[4]                                               ; pos[4]              ; yes                    ;
-; pos[20]                                              ; pos[20]             ; yes                    ;
-; pos[36]                                              ; pos[36]             ; yes                    ;
-; pos[52]                                              ; pos[52]             ; yes                    ;
-; pos[68]                                              ; pos[68]             ; yes                    ;
-; pos[84]                                              ; pos[84]             ; yes                    ;
-; pos[5]                                               ; pos[5]              ; yes                    ;
-; pos[21]                                              ; pos[21]             ; yes                    ;
-; pos[37]                                              ; pos[37]             ; yes                    ;
-; pos[53]                                              ; pos[53]             ; yes                    ;
-; pos[69]                                              ; pos[69]             ; yes                    ;
-; pos[85]                                              ; pos[85]             ; yes                    ;
-; pos[6]                                               ; pos[6]              ; yes                    ;
-; pos[22]                                              ; pos[22]             ; yes                    ;
-; pos[38]                                              ; pos[38]             ; yes                    ;
-; pos[54]                                              ; pos[54]             ; yes                    ;
-; pos[70]                                              ; pos[70]             ; yes                    ;
-; pos[86]                                              ; pos[86]             ; yes                    ;
-; pos[7]                                               ; pos[7]              ; yes                    ;
-; pos[23]                                              ; pos[23]             ; yes                    ;
-; pos[39]                                              ; pos[39]             ; yes                    ;
-; pos[55]                                              ; pos[55]             ; yes                    ;
-; pos[71]                                              ; pos[71]             ; yes                    ;
-; pos[87]                                              ; pos[87]             ; yes                    ;
-; pos[8]                                               ; pos[8]              ; yes                    ;
-; pos[24]                                              ; pos[24]             ; yes                    ;
-; pos[40]                                              ; pos[40]             ; yes                    ;
-; pos[56]                                              ; pos[56]             ; yes                    ;
-; pos[72]                                              ; pos[72]             ; yes                    ;
-; pos[88]                                              ; pos[88]             ; yes                    ;
-; pos[9]                                               ; pos[9]              ; yes                    ;
-; pos[25]                                              ; pos[25]             ; yes                    ;
-; pos[41]                                              ; pos[41]             ; yes                    ;
-; pos[57]                                              ; pos[57]             ; yes                    ;
-; pos[73]                                              ; pos[73]             ; yes                    ;
-; pos[89]                                              ; pos[89]             ; yes                    ;
-; pos[10]                                              ; pos[10]             ; yes                    ;
-; pos[26]                                              ; pos[26]             ; yes                    ;
-; pos[42]                                              ; pos[42]             ; yes                    ;
-; pos[58]                                              ; pos[58]             ; yes                    ;
-; pos[74]                                              ; pos[74]             ; yes                    ;
-; pos[90]                                              ; pos[90]             ; yes                    ;
-; pos[11]                                              ; pos[11]             ; yes                    ;
-; pos[27]                                              ; pos[27]             ; yes                    ;
-; pos[43]                                              ; pos[43]             ; yes                    ;
-; pos[59]                                              ; pos[59]             ; yes                    ;
-; pos[75]                                              ; pos[75]             ; yes                    ;
-; pos[91]                                              ; pos[91]             ; yes                    ;
-; pos[12]                                              ; pos[12]             ; yes                    ;
-; pos[28]                                              ; pos[28]             ; yes                    ;
-; pos[44]                                              ; pos[44]             ; yes                    ;
-; pos[60]                                              ; pos[60]             ; yes                    ;
-; Number of user-specified and inferred latches = 120  ;                     ;                        ;
-+------------------------------------------------------+---------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; dotC[0]$latch                                       ; times[3]            ; yes                    ;
+; dotC[1]$latch                                       ; times[3]            ; yes                    ;
+; dotC[2]$latch                                       ; times[3]            ; yes                    ;
+; dotC[3]$latch                                       ; times[3]            ; yes                    ;
+; dotC[4]$latch                                       ; times[3]            ; yes                    ;
+; dotC[5]$latch                                       ; times[3]            ; yes                    ;
+; dotC[6]$latch                                       ; times[3]            ; yes                    ;
+; dotC[7]$latch                                       ; times[3]            ; yes                    ;
+; dotC[8]$latch                                       ; times[3]            ; yes                    ;
+; dotC[9]$latch                                       ; times[3]            ; yes                    ;
+; dotC[10]$latch                                      ; times[3]            ; yes                    ;
+; dotC[11]$latch                                      ; times[3]            ; yes                    ;
+; dotC[12]$latch                                      ; times[3]            ; yes                    ;
+; dotC[13]$latch                                      ; times[3]            ; yes                    ;
+; dotC[14]$latch                                      ; times[3]            ; yes                    ;
+; dotC[15]$latch                                      ; times[3]            ; yes                    ;
+; dotR[0]$latch                                       ; times[3]            ; yes                    ;
+; dotR[1]$latch                                       ; times[3]            ; yes                    ;
+; dotR[2]$latch                                       ; times[3]            ; yes                    ;
+; dotR[3]$latch                                       ; times[3]            ; yes                    ;
+; dotR[4]$latch                                       ; times[3]            ; yes                    ;
+; dotR[5]$latch                                       ; times[3]            ; yes                    ;
+; dotR[6]$latch                                       ; times[3]            ; yes                    ;
+; dotR[7]$latch                                       ; times[3]            ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -344,14 +270,24 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 239   ;
+; Total registers                              ; 366   ;
 ; Number of registers using Synchronous Clear  ; 203   ;
 ; Number of registers using Synchronous Load   ; 3     ;
-; Number of registers using Asynchronous Clear ; 97    ;
+; Number of registers using Asynchronous Clear ; 222   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Clock Enable       ; 129   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; verf~reg0                              ; 3       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -359,14 +295,14 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|key:comb_3|keypadDelay[20]     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bomb|key:comb_3|keypadRow[1]        ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1406|delayButton[20] ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1404|delayButton[8]  ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1407|delayButton[0]  ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1405|delayButton[21] ;
-; 258:1              ; 4 bits    ; 688 LEs       ; 44 LEs               ; 644 LEs                ; Yes        ; |bomb|key:comb_3|keypadBuf[3]        ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |bomb|Mux5                           ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|key:comb_4|keypadDelay[13]     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bomb|key:comb_4|keypadRow[1]        ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1284|delayButton[18] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1282|delayButton[24] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1285|delayButton[2]  ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_1283|delayButton[5]  ;
+; 258:1              ; 4 bits    ; 688 LEs       ; 44 LEs               ; 644 LEs                ; Yes        ; |bomb|key:comb_4|keypadBuf[3]        ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |bomb|Mux14                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
@@ -387,34 +323,45 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Seven:s6"                                                                                                                                  ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; sin  ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "sin[3..2]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 239                         ;
-;     CLR               ; 13                          ;
+; arriav_ff             ; 366                         ;
+;     CLR               ; 138                         ;
 ;     CLR SCLR          ; 64                          ;
+;     ENA               ; 2                           ;
 ;     ENA CLR           ; 20                          ;
 ;     ENA SCLR          ; 104                         ;
 ;     ENA SLD           ; 3                           ;
 ;     SCLR              ; 35                          ;
-; arriav_lcell_comb     ; 794                         ;
+; arriav_lcell_comb     ; 602                         ;
 ;     arith             ; 189                         ;
 ;         1 data inputs ; 189                         ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 599                         ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 88                          ;
-;         3 data inputs ; 190                         ;
-;         4 data inputs ; 117                         ;
-;         5 data inputs ; 65                          ;
-;         6 data inputs ; 132                         ;
-; boundary_port         ; 89                          ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 406                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 199                         ;
+;         5 data inputs ; 21                          ;
+;         6 data inputs ; 118                         ;
+; boundary_port         ; 91                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.20                        ;
-; Average LUT depth     ; 3.26                        ;
+; Average LUT depth     ; 3.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -433,431 +380,130 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Dec 30 13:57:54 2016
+    Info: Processing started: Fri Dec 30 18:24:11 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bomb -c bomb
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 5 design units, including 5 entities, in source file bomb.v
     Info (12023): Found entity 1: bomb File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 1
-    Info (12023): Found entity 2: Seven File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 348
-    Info (12023): Found entity 3: move File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 376
-    Info (12023): Found entity 4: key File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 412
-    Info (12023): Found entity 5: SevenSegment File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 548
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(29): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 29
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(238): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 238
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(239): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 239
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(240): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 240
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(241): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 241
+    Info (12023): Found entity 2: Seven File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 365
+    Info (12023): Found entity 3: move File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 393
+    Info (12023): Found entity 4: key File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 429
+    Info (12023): Found entity 5: SevenSegment File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 584
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(36): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 36
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(255): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 255
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(256): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 256
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(257): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 257
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(258): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 258
 Info (12127): Elaborating entity "bomb" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at bomb.v(41): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 41
-Warning (10240): Verilog HDL Always Construct warning at bomb.v(45): inferring latch(es) for variable "pos", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 45
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(65): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 65
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(76): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 76
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(81): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 81
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(86): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 86
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(91): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 91
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(96): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 96
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(101): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 101
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(106): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 106
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(111): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 111
-Warning (10270): Verilog HDL Case Statement warning at bomb.v(72): incomplete case statement has no default case item File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Warning (10240): Verilog HDL Always Construct warning at bomb.v(63): inferring latch(es) for variable "dotC", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 63
-Warning (10240): Verilog HDL Always Construct warning at bomb.v(63): inferring latch(es) for variable "dotR", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 63
-Warning (10230): Verilog HDL assignment warning at bomb.v(123): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 123
-Warning (10230): Verilog HDL assignment warning at bomb.v(195): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 195
-Warning (10230): Verilog HDL assignment warning at bomb.v(199): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 199
-Warning (10230): Verilog HDL assignment warning at bomb.v(204): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 204
-Warning (10230): Verilog HDL assignment warning at bomb.v(209): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 209
-Warning (10230): Verilog HDL assignment warning at bomb.v(214): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 214
-Warning (10230): Verilog HDL assignment warning at bomb.v(219): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 219
-Warning (10230): Verilog HDL assignment warning at bomb.v(250): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 250
-Warning (10230): Verilog HDL assignment warning at bomb.v(252): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 252
-Warning (10230): Verilog HDL assignment warning at bomb.v(254): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 254
-Warning (10230): Verilog HDL assignment warning at bomb.v(259): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 259
-Warning (10230): Verilog HDL assignment warning at bomb.v(261): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 261
-Warning (10230): Verilog HDL assignment warning at bomb.v(263): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 263
-Warning (10230): Verilog HDL assignment warning at bomb.v(265): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 265
-Warning (10230): Verilog HDL assignment warning at bomb.v(270): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 270
-Warning (10230): Verilog HDL assignment warning at bomb.v(272): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 272
-Warning (10230): Verilog HDL assignment warning at bomb.v(274): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 274
+Warning (10036): Verilog HDL or VHDL warning at bomb.v(24): object "second" assigned a value but never read File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 24
+Warning (10230): Verilog HDL assignment warning at bomb.v(48): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(82): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 82
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(93): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 93
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(98): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 98
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(103): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 103
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(108): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 108
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(113): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 113
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(118): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 118
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(123): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 123
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(128): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 128
+Warning (10270): Verilog HDL Case Statement warning at bomb.v(89): incomplete case statement has no default case item File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(80): inferring latch(es) for variable "dotC", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 80
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(80): inferring latch(es) for variable "dotR", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 80
+Warning (10230): Verilog HDL assignment warning at bomb.v(140): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 140
+Warning (10230): Verilog HDL assignment warning at bomb.v(212): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 212
+Warning (10230): Verilog HDL assignment warning at bomb.v(216): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 216
+Warning (10230): Verilog HDL assignment warning at bomb.v(221): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 221
+Warning (10230): Verilog HDL assignment warning at bomb.v(226): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 226
+Warning (10230): Verilog HDL assignment warning at bomb.v(231): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 231
+Warning (10230): Verilog HDL assignment warning at bomb.v(236): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 236
+Warning (10230): Verilog HDL assignment warning at bomb.v(267): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 267
+Warning (10230): Verilog HDL assignment warning at bomb.v(269): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 269
+Warning (10230): Verilog HDL assignment warning at bomb.v(271): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 271
 Warning (10230): Verilog HDL assignment warning at bomb.v(276): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 276
-Warning (10230): Verilog HDL assignment warning at bomb.v(281): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 281
-Warning (10230): Verilog HDL assignment warning at bomb.v(283): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 283
-Warning (10230): Verilog HDL assignment warning at bomb.v(285): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 285
-Warning (10230): Verilog HDL assignment warning at bomb.v(290): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 290
-Warning (10230): Verilog HDL assignment warning at bomb.v(292): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 292
-Warning (10230): Verilog HDL assignment warning at bomb.v(294): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 294
-Warning (10230): Verilog HDL assignment warning at bomb.v(299): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 299
-Warning (10230): Verilog HDL assignment warning at bomb.v(301): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 301
-Warning (10230): Verilog HDL assignment warning at bomb.v(303): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 303
-Warning (10230): Verilog HDL assignment warning at bomb.v(305): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 305
-Warning (10230): Verilog HDL assignment warning at bomb.v(310): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 310
-Warning (10230): Verilog HDL assignment warning at bomb.v(312): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 312
-Warning (10230): Verilog HDL assignment warning at bomb.v(314): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 314
+Warning (10230): Verilog HDL assignment warning at bomb.v(278): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 278
+Warning (10230): Verilog HDL assignment warning at bomb.v(280): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 280
+Warning (10230): Verilog HDL assignment warning at bomb.v(282): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 282
+Warning (10230): Verilog HDL assignment warning at bomb.v(287): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 287
+Warning (10230): Verilog HDL assignment warning at bomb.v(289): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 289
+Warning (10230): Verilog HDL assignment warning at bomb.v(291): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 291
+Warning (10230): Verilog HDL assignment warning at bomb.v(293): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 293
+Warning (10230): Verilog HDL assignment warning at bomb.v(298): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 298
+Warning (10230): Verilog HDL assignment warning at bomb.v(300): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 300
+Warning (10230): Verilog HDL assignment warning at bomb.v(302): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 302
+Warning (10230): Verilog HDL assignment warning at bomb.v(307): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 307
+Warning (10230): Verilog HDL assignment warning at bomb.v(309): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 309
+Warning (10230): Verilog HDL assignment warning at bomb.v(311): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 311
 Warning (10230): Verilog HDL assignment warning at bomb.v(316): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 316
-Warning (10230): Verilog HDL assignment warning at bomb.v(321): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 321
-Warning (10230): Verilog HDL assignment warning at bomb.v(323): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 323
-Warning (10230): Verilog HDL assignment warning at bomb.v(325): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 325
-Info (10041): Inferred latch for "dotR[0]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[1]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[2]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[3]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[4]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[5]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[6]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotR[7]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[0]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[1]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[2]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[3]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[4]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[5]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[6]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[7]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[8]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[9]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[10]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[11]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[12]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[13]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[14]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "dotC[15]" at bomb.v(72) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 72
-Info (10041): Inferred latch for "pos[0]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[1]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[2]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[3]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[4]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[5]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[6]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[7]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[8]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[9]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[10]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[11]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[12]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[13]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[14]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[15]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[16]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[17]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[18]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[19]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[20]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[21]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[22]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[23]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[24]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[25]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[26]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[27]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[28]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[29]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[30]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[31]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[32]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[33]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[34]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[35]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[36]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[37]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[38]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[39]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[40]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[41]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[42]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[43]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[44]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[45]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[46]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[47]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[48]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[49]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[50]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[51]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[52]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[53]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[54]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[55]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[56]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[57]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[58]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[59]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[60]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[61]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[62]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[63]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[64]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[65]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[66]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[67]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[68]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[69]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[70]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[71]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[72]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[73]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[74]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[75]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[76]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[77]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[78]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[79]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[80]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[81]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[82]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[83]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[84]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[85]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[86]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[87]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[88]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[89]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[90]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[91]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[92]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[93]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[94]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[95]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[96]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[97]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[98]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[99]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[100]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[101]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[102]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[103]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[104]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[105]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[106]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[107]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[108]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[109]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[110]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[111]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[112]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[113]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[114]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[115]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[116]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[117]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[118]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[119]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[120]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[121]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[122]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[123]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[124]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[125]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[126]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (10041): Inferred latch for "pos[127]" at bomb.v(60) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-Info (12128): Elaborating entity "key" for hierarchy "key:comb_3" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 29
-Info (12128): Elaborating entity "SevenSegment" for hierarchy "key:comb_3|SevenSegment:seven" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 425
-Info (12128): Elaborating entity "Seven" for hierarchy "Seven:s1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 230
-Info (12128): Elaborating entity "move" for hierarchy "move:comb_1404" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 238
-Warning (13012): Latch pos[0] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[16] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[32] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[48] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[64] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[80] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[1] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[17] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[33] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[49] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[65] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[81] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[2] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[18] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[34] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[50] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[66] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[82] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[3] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[19] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[35] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[51] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[67] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[83] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[4] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[20] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[36] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[52] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[68] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[84] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[5] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[21] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[37] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[53] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[69] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[85] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[6] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[22] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[38] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[54] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[70] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[86] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[7] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[23] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[39] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[55] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[71] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[87] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[8] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[24] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[40] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[56] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[72] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[88] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[9] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[25] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[41] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[57] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[73] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[89] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[10] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[26] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[42] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[58] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[74] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[90] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[11] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[27] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[43] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[59] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[75] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[91] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[12] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[28] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[44] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[60] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[76] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[92] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[13] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[29] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[45] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[61] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[77] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[93] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[14] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[30] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[46] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[62] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[78] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[94] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[15] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[31] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[47] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[63] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
-Warning (13012): Latch pos[79] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
-Warning (13012): Latch pos[95] has unsafe behavior File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 60
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal key:comb_3|keypadBuf[3] File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 427
+Warning (10230): Verilog HDL assignment warning at bomb.v(318): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 318
+Warning (10230): Verilog HDL assignment warning at bomb.v(320): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 320
+Warning (10230): Verilog HDL assignment warning at bomb.v(322): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 322
+Warning (10230): Verilog HDL assignment warning at bomb.v(327): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 327
+Warning (10230): Verilog HDL assignment warning at bomb.v(329): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 329
+Warning (10230): Verilog HDL assignment warning at bomb.v(331): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 331
+Warning (10230): Verilog HDL assignment warning at bomb.v(333): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 333
+Warning (10230): Verilog HDL assignment warning at bomb.v(338): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 338
+Warning (10230): Verilog HDL assignment warning at bomb.v(340): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 340
+Warning (10230): Verilog HDL assignment warning at bomb.v(342): truncated value with size 32 to match size of target (3) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 342
+Info (10041): Inferred latch for "dotR[0]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[1]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[2]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[3]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[4]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[5]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[6]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotR[7]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[0]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[1]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[2]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[3]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[4]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[5]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[6]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[7]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[8]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[9]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[10]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[11]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[12]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[13]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[14]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (10041): Inferred latch for "dotC[15]" at bomb.v(89) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 89
+Info (12128): Elaborating entity "key" for hierarchy "key:comb_4" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 36
+Warning (10230): Verilog HDL assignment warning at bomb.v(466): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 466
+Warning (10230): Verilog HDL assignment warning at bomb.v(472): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 472
+Warning (10230): Verilog HDL assignment warning at bomb.v(478): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 478
+Warning (10230): Verilog HDL assignment warning at bomb.v(484): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 484
+Warning (10230): Verilog HDL assignment warning at bomb.v(490): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 490
+Warning (10230): Verilog HDL assignment warning at bomb.v(496): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 496
+Warning (10230): Verilog HDL assignment warning at bomb.v(502): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 502
+Warning (10230): Verilog HDL assignment warning at bomb.v(508): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 508
+Warning (10230): Verilog HDL assignment warning at bomb.v(514): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 514
+Warning (10230): Verilog HDL assignment warning at bomb.v(520): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 520
+Warning (10230): Verilog HDL assignment warning at bomb.v(526): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 526
+Warning (10230): Verilog HDL assignment warning at bomb.v(532): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 532
+Warning (10230): Verilog HDL assignment warning at bomb.v(538): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 538
+Warning (10230): Verilog HDL assignment warning at bomb.v(544): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 544
+Warning (10230): Verilog HDL assignment warning at bomb.v(550): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 550
+Warning (10230): Verilog HDL assignment warning at bomb.v(556): truncated value with size 32 to match size of target (2) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 556
+Info (12128): Elaborating entity "SevenSegment" for hierarchy "key:comb_4|SevenSegment:seven" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 444
+Info (12128): Elaborating entity "Seven" for hierarchy "Seven:s1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 247
+Info (12128): Elaborating entity "move" for hierarchy "move:comb_1282" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 255
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex6[1]" is stuck at GND File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/cygwin/home/user/pro/col3/bomb/output_files/bomb.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 977 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 785 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 78 output pins
-    Info (21061): Implemented 888 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 247 warnings
+    Info (21059): Implemented 80 output pins
+    Info (21061): Implemented 694 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
     Info: Peak virtual memory: 908 megabytes
-    Info: Processing ended: Fri Dec 30 13:58:08 2016
-    Info: Elapsed time: 00:00:14
+    Info: Processing ended: Fri Dec 30 18:24:24 2016
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:28
 
 

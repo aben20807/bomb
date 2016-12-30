@@ -25,10 +25,6 @@ stop => tmp5.OUTPUTSELECT
 stop => tmp5.OUTPUTSELECT
 stop => tmp5.OUTPUTSELECT
 stop => tmp5.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
 led[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 led[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 led[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
@@ -37,14 +33,16 @@ led[4] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 led[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 led[6] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 led[7] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+verf <= verf~reg0.DB_MAX_OUTPUT_PORT_TYPE
+verf1 <= verf~reg0.DB_MAX_OUTPUT_PORT_TYPE
 keypadC[0] => keypadC[0].IN1
 keypadC[1] => keypadC[1].IN1
 keypadC[2] => keypadC[2].IN1
 keypadC[3] => keypadC[3].IN1
-keypadR[0] <= key:comb_3.keypadRow
-keypadR[1] <= key:comb_3.keypadRow
-keypadR[2] <= key:comb_3.keypadRow
-keypadR[3] <= key:comb_3.keypadRow
+keypadR[0] <= key:comb_4.keypadRow
+keypadR[1] <= key:comb_4.keypadRow
+keypadR[2] <= key:comb_4.keypadRow
+keypadR[3] <= key:comb_4.keypadRow
 dotC[0] <= dotC[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 dotC[1] <= dotC[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 dotC[2] <= dotC[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -113,7 +111,9 @@ hex6[5] <= Seven:s6.sout
 hex6[6] <= Seven:s6.sout
 
 
-|bomb|key:comb_3
+|bomb|key:comb_4
+clk => aa[0]~reg0.CLK
+clk => aa[1]~reg0.CLK
 clk => KEY~reg0.CLK
 clk => keypadDelay[0].CLK
 clk => keypadDelay[1].CLK
@@ -182,6 +182,8 @@ rst => keypadDelay.OUTPUTSELECT
 rst => keypadDelay.OUTPUTSELECT
 rst => keypadDelay.OUTPUTSELECT
 rst => KEY.OUTPUTSELECT
+rst => aa[1]~reg0.ENA
+rst => aa[0]~reg0.ENA
 Data[0] <= SevenSegment:seven.out
 Data[1] <= SevenSegment:seven.out
 Data[2] <= SevenSegment:seven.out
@@ -195,9 +197,11 @@ keypadCol[1] => Decoder0.IN2
 keypadCol[2] => Decoder0.IN1
 keypadCol[3] => Decoder0.IN0
 KEY <= KEY~reg0.DB_MAX_OUTPUT_PORT_TYPE
+aa[0] <= aa[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+aa[1] <= aa[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|key:comb_3|SevenSegment:seven
+|bomb|key:comb_4|SevenSegment:seven
 in[0] => Decoder0.IN3
 in[1] => Decoder0.IN2
 in[1] => Decoder1.IN2
@@ -295,7 +299,7 @@ sout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 sout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_1404
+|bomb|move:comb_1282
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -354,7 +358,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_1405
+|bomb|move:comb_1283
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -413,7 +417,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_1406
+|bomb|move:comb_1284
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -472,7 +476,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_1407
+|bomb|move:comb_1285
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
