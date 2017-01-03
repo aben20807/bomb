@@ -356,11 +356,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "cancel",
+					"name" : "isBomb",
 					"strict" : false
 				},
 				{
-					"name" : "isBomb",
+					"name" : "cancel",
 					"strict" : false
 				},
 				{

@@ -16,17 +16,16 @@ reg [7:0]dotR;
 reg [31:0]cnt1, cnt2, cnt3;//1s, 10k, 0.5s
 reg [7:0]led;
 reg [3:0]tmp1, tmp2, tmp3, tmp4, tmp5, tmp6;//for timing
-reg div_clk_1s, div_clk_10k, gameover;
+reg div_clk_1s, div_clk_10k;//frequency divider
+reg twinkle;//frequency divider fo miner targget
 reg [3:0]area;
 reg [3:0]State,NextState;
 reg [3:0]times;
 reg [127:0]pos, twink;
-reg second;
-reg twinkle;
+reg second;//count if click twice
+reg gameover;
 reg verf;
 wire verf1;
-
-
 wire [3:0]isMove;
 wire [3:0]index;
 wire K;
@@ -71,12 +70,12 @@ begin
 		end
 		else if(stop == 1)
 		begin
-			if(second == 0)
-				begin
-					second <= 1;
-					verf <= ~verf;
-				end
-			else if(isBomb == 1)
+			if(second == 0) 
+			begin
+				second <= 1;
+				verf <= ~verf;
+			end
+			else if(isBomb == 1 && pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] != 1)//bug2 fixed
 			begin
 				twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;
 				second <= 0;
@@ -86,18 +85,22 @@ begin
 			begin
 				if(iwanttostep == 1 && twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] == 1)
 				begin
-					pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;//~pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4];
+					pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;
 					twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 0;
 					verf <= ~verf;
 					second <= 0;
 				end
 				else if(twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] == 0)
 				begin
-					pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;//~pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4];
+					pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;
 					verf <= ~verf;
 					second <= 0;
 				end
-				//latch
+				else//bug1 fixed
+				begin
+					second <= 0;
+					verf <= ~verf;
+				end
 			end
 		end
 		else
@@ -161,12 +164,12 @@ begin
 end
 
 /*gameover*/
-always @(negedge reset or posedge clock or posedge pos[87])
+always @(negedge reset or posedge clock or posedge pos[87])//miner
 begin
 	if(!reset)
 	begin
 		gameover = 0;
-		State = S0;//TODO not reset ?
+		State = S0;
 	end
 	else
 	begin
@@ -232,7 +235,7 @@ begin
 		end
 	end
 end
-	
+
 /*timing using 1 sec*/
 always @(negedge reset or posedge div_clk_1s)
 begin
@@ -290,7 +293,7 @@ Seven s3(.sin(tmp3), .sout(hex3));//m
 Seven s4(.sin(tmp4), .sout(hex4));//m
 Seven s5(.sin(tmp5), .sout(hex5));//h
 Seven s6(.sin(tmp6), .sout(hex6));//h
-	
+
 /*call move to detect if move button is click*/
 move(.clk(clock), .rst(reset), .button(button[0]), .LED(isMove[0]));
 move(.clk(clock), .rst(reset), .button(button[1]), .LED(isMove[1]));
@@ -300,7 +303,7 @@ move(.clk(clock), .rst(reset), .button(button[3]), .LED(isMove[3]));
 /*select area after moving*/
 always@(posedge isMove[0] or posedge isMove[1] or posedge isMove[2] or posedge isMove[3])
 begin
-	case(State)//like Moore
+	case(State)//Moore
 		S0:
 		begin
 			if(isMove[0] == 1)
@@ -382,10 +385,9 @@ begin
 				NextState = S7;
 		end
 		default:
-			NextState = S8;
+			NextState = S0;//bug3 fixed
 	endcase
 end
-
 
 /*display area by led*/
 always@(State)
@@ -436,11 +438,11 @@ endmodule
 module move(clk, rst, button, LED);
 input clk, rst, button;	
 output LED;
-	
+
 reg flagButton;
 reg LED;
 reg [24:0]delayButton;
-	
+
 always@(posedge clk)
 begin
 	if(!rst)
@@ -472,7 +474,7 @@ endmodule
 module key(clk, rst, Data, keypadRow, keypadCol, KEY);
 input clk, rst;
 input [3:0]keypadCol;
-	
+
 output [3:0]keypadRow;
 output [3:0]Data;
 output KEY;
@@ -482,9 +484,8 @@ reg [3:0]keypadRow;
 reg [3:0]keypadBuf;
 reg [24:0]keypadDelay;
 
-	
 SevenSegment seven(.in(keypadBuf), .out(Data));
-	
+
 always@(posedge clk)
 begin
 	if(!rst)
@@ -498,7 +499,6 @@ begin
 	begin
 		if(keypadDelay == `TimeExpire_KEY)
 		begin
-//			KEY = 1;
 			keypadDelay = 25'd0;
 			case({keypadRow, keypadCol})
 				8'b1110_1110 : 
@@ -587,7 +587,6 @@ begin
 					KEY = 0;
 				end
 			endcase
-			
 			case(keypadRow)
 				4'b1110 : keypadRow = 4'b1101;
 				4'b1101 : keypadRow = 4'b1011;

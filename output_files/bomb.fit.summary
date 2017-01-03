@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat Dec 31 00:23:50 2016
+Fitter Status : Successful - Tue Jan 03 17:36:17 2017
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : bomb
 Top-level Entity Name : bomb
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 573 / 18,480 ( 3 % )
-Total registers : 563
+Logic utilization (in ALMs) : 609 / 18,480 ( 3 % )
+Total registers : 566
 Total pins : 94 / 224 ( 42 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )

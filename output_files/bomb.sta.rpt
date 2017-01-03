@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for bomb
-Sat Dec 31 00:24:07 2016
+Tue Jan 03 17:36:35 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -102,12 +102,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.26        ;
+; Average used               ; 1.33        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  25.5%      ;
+;     Processor 2            ;  33.2%      ;
 +----------------------------+-------------+
 
 
@@ -130,11 +130,11 @@ agreement for further details.
 +------------+-----------------+----------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name     ; Note ;
 +------------+-----------------+----------------+------+
-; 112.74 MHz ; 112.74 MHz      ; cancel         ;      ;
-; 120.28 MHz ; 120.28 MHz      ; key:comb_4|KEY ;      ;
-; 134.7 MHz  ; 134.7 MHz       ; clock          ;      ;
-; 222.77 MHz ; 222.77 MHz      ; div_clk_1s     ;      ;
-; 260.55 MHz ; 260.55 MHz      ; div_clk_10k    ;      ;
+; 117.73 MHz ; 117.73 MHz      ; key:comb_4|KEY ;      ;
+; 120.02 MHz ; 120.02 MHz      ; cancel         ;      ;
+; 133.1 MHz  ; 133.1 MHz       ; clock          ;      ;
+; 210.48 MHz ; 210.48 MHz      ; div_clk_1s     ;      ;
+; 284.01 MHz ; 284.01 MHz      ; div_clk_10k    ;      ;
 +------------+-----------------+----------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -145,18 +145,18 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+-----------------------------------------+
-; Slow 1100mV 85C Model Setup Summary     ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; key:comb_4|KEY ; -9.841 ; -2316.094     ;
-; times[3]       ; -7.807 ; -152.141      ;
-; clock          ; -6.424 ; -1116.263     ;
-; cancel         ; -3.935 ; -7.508        ;
-; div_clk_1s     ; -3.489 ; -69.778       ;
-; div_clk_10k    ; -2.838 ; -8.990        ;
-+----------------+--------+---------------+
++------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary      ;
++----------------+---------+---------------+
+; Clock          ; Slack   ; End Point TNS ;
++----------------+---------+---------------+
+; key:comb_4|KEY ; -10.012 ; -2351.795     ;
+; times[3]       ; -7.180  ; -143.815      ;
+; clock          ; -6.513  ; -1111.468     ;
+; cancel         ; -4.183  ; -7.758        ;
+; div_clk_1s     ; -3.751  ; -69.790       ;
+; div_clk_10k    ; -2.521  ; -11.637       ;
++----------------+---------+---------------+
 
 
 +----------------------------------------+
@@ -164,12 +164,12 @@ HTML report is unavailable in plain text report export.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; key:comb_4|KEY ; 0.333 ; 0.000         ;
-; clock          ; 0.418 ; 0.000         ;
-; times[3]       ; 0.691 ; 0.000         ;
-; div_clk_10k    ; 0.697 ; 0.000         ;
-; cancel         ; 0.814 ; 0.000         ;
-; div_clk_1s     ; 0.834 ; 0.000         ;
+; div_clk_10k    ; 0.193 ; 0.000         ;
+; key:comb_4|KEY ; 0.319 ; 0.000         ;
+; clock          ; 0.424 ; 0.000         ;
+; div_clk_1s     ; 0.774 ; 0.000         ;
+; times[3]       ; 0.954 ; 0.000         ;
+; cancel         ; 1.144 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -178,8 +178,8 @@ HTML report is unavailable in plain text report export.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -4.004 ; -7.676        ;
-; clock          ; -2.558 ; -10.137       ;
+; key:comb_4|KEY ; -4.465 ; -8.480        ;
+; clock          ; -2.377 ; -9.472        ;
 +----------------+--------+---------------+
 
 
@@ -188,8 +188,8 @@ HTML report is unavailable in plain text report export.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; clock          ; 1.287 ; 0.000         ;
-; key:comb_4|KEY ; 2.456 ; 0.000         ;
+; clock          ; 1.082 ; 0.000         ;
+; key:comb_4|KEY ; 2.628 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -198,12 +198,12 @@ HTML report is unavailable in plain text report export.
 +----------------+--------+-------------------------+
 ; Clock          ; Slack  ; End Point TNS           ;
 +----------------+--------+-------------------------+
-; key:comb_4|KEY ; -0.538 ; -237.281                ;
-; clock          ; -0.538 ; -214.895                ;
-; div_clk_1s     ; -0.538 ; -19.169                 ;
-; div_clk_10k    ; -0.538 ; -3.848                  ;
-; cancel         ; -0.131 ; -0.292                  ;
-; times[3]       ; 0.200  ; 0.000                   ;
+; clock          ; -0.629 ; -216.132                ;
+; key:comb_4|KEY ; -0.538 ; -244.455                ;
+; div_clk_1s     ; -0.538 ; -19.188                 ;
+; div_clk_10k    ; -0.538 ; -5.558                  ;
+; cancel         ; 0.076  ; 0.000                   ;
+; times[3]       ; 0.235  ; 0.000                   ;
 +----------------+--------+-------------------------+
 
 
@@ -218,27 +218,27 @@ No synchronizer chains to report.
 +------------+-----------------+----------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name     ; Note ;
 +------------+-----------------+----------------+------+
-; 112.59 MHz ; 112.59 MHz      ; cancel         ;      ;
-; 121.37 MHz ; 121.37 MHz      ; key:comb_4|KEY ;      ;
-; 132.64 MHz ; 132.64 MHz      ; clock          ;      ;
-; 222.57 MHz ; 222.57 MHz      ; div_clk_1s     ;      ;
-; 267.31 MHz ; 267.31 MHz      ; div_clk_10k    ;      ;
+; 118.22 MHz ; 118.22 MHz      ; key:comb_4|KEY ;      ;
+; 122.37 MHz ; 122.37 MHz      ; cancel         ;      ;
+; 130.24 MHz ; 130.24 MHz      ; clock          ;      ;
+; 215.47 MHz ; 215.47 MHz      ; div_clk_1s     ;      ;
+; 282.97 MHz ; 282.97 MHz      ; div_clk_10k    ;      ;
 +------------+-----------------+----------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-----------------------------------------+
-; Slow 1100mV 0C Model Setup Summary      ;
-+----------------+--------+---------------+
-; Clock          ; Slack  ; End Point TNS ;
-+----------------+--------+---------------+
-; key:comb_4|KEY ; -9.990 ; -2359.136     ;
-; times[3]       ; -7.726 ; -149.690      ;
-; clock          ; -6.539 ; -1115.447     ;
-; cancel         ; -3.941 ; -7.410        ;
-; div_clk_1s     ; -3.493 ; -70.108       ;
-; div_clk_10k    ; -2.741 ; -8.944        ;
-+----------------+--------+---------------+
++------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary       ;
++----------------+---------+---------------+
+; Clock          ; Slack   ; End Point TNS ;
++----------------+---------+---------------+
+; key:comb_4|KEY ; -10.096 ; -2396.947     ;
+; times[3]       ; -7.000  ; -140.690      ;
+; clock          ; -6.678  ; -1118.067     ;
+; cancel         ; -3.882  ; -7.460        ;
+; div_clk_1s     ; -3.641  ; -68.134       ;
+; div_clk_10k    ; -2.534  ; -11.722       ;
++----------------+---------+---------------+
 
 
 +----------------------------------------+
@@ -246,12 +246,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; key:comb_4|KEY ; 0.296 ; 0.000         ;
-; clock          ; 0.433 ; 0.000         ;
-; times[3]       ; 0.523 ; 0.000         ;
-; cancel         ; 0.578 ; 0.000         ;
-; div_clk_10k    ; 0.774 ; 0.000         ;
-; div_clk_1s     ; 0.848 ; 0.000         ;
+; key:comb_4|KEY ; 0.280 ; 0.000         ;
+; div_clk_10k    ; 0.360 ; 0.000         ;
+; clock          ; 0.430 ; 0.000         ;
+; div_clk_1s     ; 0.745 ; 0.000         ;
+; times[3]       ; 0.801 ; 0.000         ;
+; cancel         ; 0.804 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -260,8 +260,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -3.945 ; -7.550        ;
-; clock          ; -2.256 ; -8.855        ;
+; key:comb_4|KEY ; -4.420 ; -8.392        ;
+; clock          ; -1.977 ; -7.882        ;
 +----------------+--------+---------------+
 
 
@@ -270,8 +270,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; clock          ; 0.824 ; 0.000         ;
-; key:comb_4|KEY ; 2.399 ; 0.000         ;
+; clock          ; 0.633 ; 0.000         ;
+; key:comb_4|KEY ; 2.539 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -280,12 +280,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------+--------+------------------------+
 ; Clock          ; Slack  ; End Point TNS          ;
 +----------------+--------+------------------------+
-; key:comb_4|KEY ; -0.538 ; -229.433               ;
-; clock          ; -0.538 ; -220.536               ;
-; div_clk_1s     ; -0.538 ; -19.187                ;
-; div_clk_10k    ; -0.538 ; -3.868                 ;
-; cancel         ; -0.112 ; -0.208                 ;
-; times[3]       ; 0.265  ; 0.000                  ;
+; clock          ; -0.657 ; -221.180               ;
+; key:comb_4|KEY ; -0.538 ; -240.860               ;
+; div_clk_1s     ; -0.538 ; -19.094                ;
+; div_clk_10k    ; -0.538 ; -5.388                 ;
+; cancel         ; 0.047  ; 0.000                  ;
+; times[3]       ; 0.311  ; 0.000                  ;
 +----------------+--------+------------------------+
 
 
@@ -300,27 +300,27 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -4.950 ; -1142.852     ;
-; times[3]       ; -3.627 ; -69.348       ;
-; clock          ; -3.540 ; -416.153      ;
-; cancel         ; -1.556 ; -3.023        ;
-; div_clk_1s     ; -1.484 ; -26.856       ;
-; div_clk_10k    ; -1.372 ; -3.661        ;
+; key:comb_4|KEY ; -5.246 ; -1168.057     ;
+; clock          ; -3.587 ; -415.561      ;
+; times[3]       ; -3.470 ; -67.607       ;
+; cancel         ; -1.779 ; -3.162        ;
+; div_clk_1s     ; -1.639 ; -27.451       ;
+; div_clk_10k    ; -1.056 ; -4.142        ;
 +----------------+--------+---------------+
 
 
-+----------------------------------------+
-; Fast 1100mV 85C Model Hold Summary     ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; cancel         ; 0.094 ; 0.000         ;
-; times[3]       ; 0.101 ; 0.000         ;
-; key:comb_4|KEY ; 0.129 ; 0.000         ;
-; clock          ; 0.181 ; 0.000         ;
-; div_clk_10k    ; 0.267 ; 0.000         ;
-; div_clk_1s     ; 0.302 ; 0.000         ;
-+----------------+-------+---------------+
++-----------------------------------------+
+; Fast 1100mV 85C Model Hold Summary      ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; div_clk_10k    ; -0.104 ; -0.118        ;
+; key:comb_4|KEY ; 0.106  ; 0.000         ;
+; clock          ; 0.132  ; 0.000         ;
+; cancel         ; 0.251  ; 0.000         ;
+; times[3]       ; 0.287  ; 0.000         ;
+; div_clk_1s     ; 0.302  ; 0.000         ;
++----------------+--------+---------------+
 
 
 +-----------------------------------------+
@@ -328,8 +328,8 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -2.346 ; -4.384        ;
-; clock          ; -1.101 ; -4.188        ;
+; key:comb_4|KEY ; -2.689 ; -5.034        ;
+; clock          ; -1.064 ; -4.195        ;
 +----------------+--------+---------------+
 
 
@@ -338,8 +338,8 @@ No synchronizer chains to report.
 +----------------+-------+---------------+
 ; Clock          ; Slack ; End Point TNS ;
 +----------------+-------+---------------+
-; clock          ; 0.315 ; 0.000         ;
-; key:comb_4|KEY ; 0.970 ; 0.000         ;
+; clock          ; 0.208 ; 0.000         ;
+; key:comb_4|KEY ; 1.063 ; 0.000         ;
 +----------------+-------+---------------+
 
 
@@ -348,12 +348,12 @@ No synchronizer chains to report.
 +----------------+--------+-------------------------+
 ; Clock          ; Slack  ; End Point TNS           ;
 +----------------+--------+-------------------------+
-; clock          ; -0.453 ; -27.154                 ;
-; cancel         ; -0.307 ; -1.157                  ;
-; key:comb_4|KEY ; -0.127 ; -13.476                 ;
-; div_clk_10k    ; -0.101 ; -0.404                  ;
+; clock          ; -0.560 ; -27.842                 ;
+; cancel         ; -0.192 ; -0.977                  ;
+; key:comb_4|KEY ; -0.148 ; -17.385                 ;
+; div_clk_10k    ; -0.071 ; -0.334                  ;
 ; div_clk_1s     ; 0.047  ; 0.000                   ;
-; times[3]       ; 0.265  ; 0.000                   ;
+; times[3]       ; 0.313  ; 0.000                   ;
 +----------------+--------+-------------------------+
 
 
@@ -368,12 +368,12 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -4.541 ; -1050.821     ;
-; clock          ; -3.217 ; -366.349      ;
-; times[3]       ; -3.197 ; -60.732       ;
-; div_clk_1s     ; -1.306 ; -23.764       ;
-; cancel         ; -1.267 ; -2.501        ;
-; div_clk_10k    ; -1.227 ; -3.182        ;
+; key:comb_4|KEY ; -4.791 ; -1079.090     ;
+; clock          ; -3.256 ; -367.255      ;
+; times[3]       ; -3.012 ; -58.650       ;
+; div_clk_1s     ; -1.430 ; -23.905       ;
+; cancel         ; -1.387 ; -2.488        ;
+; div_clk_10k    ; -0.917 ; -3.566        ;
 +----------------+--------+---------------+
 
 
@@ -382,12 +382,12 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; cancel         ; -0.046 ; -0.046        ;
-; times[3]       ; 0.028  ; 0.000         ;
-; key:comb_4|KEY ; 0.102  ; 0.000         ;
-; clock          ; 0.163  ; 0.000         ;
-; div_clk_10k    ; 0.230  ; 0.000         ;
-; div_clk_1s     ; 0.278  ; 0.000         ;
+; div_clk_10k    ; -0.100 ; -0.100        ;
+; clock          ; -0.092 ; -0.276        ;
+; key:comb_4|KEY ; 0.084  ; 0.000         ;
+; cancel         ; 0.086  ; 0.000         ;
+; times[3]       ; 0.199  ; 0.000         ;
+; div_clk_1s     ; 0.277  ; 0.000         ;
 +----------------+--------+---------------+
 
 
@@ -396,19 +396,19 @@ No synchronizer chains to report.
 +----------------+--------+---------------+
 ; Clock          ; Slack  ; End Point TNS ;
 +----------------+--------+---------------+
-; key:comb_4|KEY ; -2.217 ; -4.156        ;
-; clock          ; -0.742 ; -2.836        ;
+; key:comb_4|KEY ; -2.511 ; -4.721        ;
+; clock          ; -0.701 ; -2.753        ;
 +----------------+--------+---------------+
 
 
-+----------------------------------------+
-; Fast 1100mV 0C Model Removal Summary   ;
-+----------------+-------+---------------+
-; Clock          ; Slack ; End Point TNS ;
-+----------------+-------+---------------+
-; clock          ; 0.073 ; 0.000         ;
-; key:comb_4|KEY ; 0.924 ; 0.000         ;
-+----------------+-------+---------------+
++-----------------------------------------+
+; Fast 1100mV 0C Model Removal Summary    ;
++----------------+--------+---------------+
+; Clock          ; Slack  ; End Point TNS ;
++----------------+--------+---------------+
+; clock          ; -0.025 ; -0.025        ;
+; key:comb_4|KEY ; 1.005  ; 0.000         ;
++----------------+--------+---------------+
 
 
 +--------------------------------------------------+
@@ -416,12 +416,12 @@ No synchronizer chains to report.
 +----------------+--------+------------------------+
 ; Clock          ; Slack  ; End Point TNS          ;
 +----------------+--------+------------------------+
-; clock          ; -0.462 ; -27.354                ;
-; cancel         ; -0.248 ; -0.946                 ;
-; div_clk_10k    ; -0.056 ; -0.224                 ;
-; key:comb_4|KEY ; -0.054 ; -2.475                 ;
-; div_clk_1s     ; 0.069  ; 0.000                  ;
-; times[3]       ; 0.311  ; 0.000                  ;
+; clock          ; -0.535 ; -28.040                ;
+; cancel         ; -0.166 ; -0.846                 ;
+; key:comb_4|KEY ; -0.081 ; -7.691                 ;
+; div_clk_10k    ; -0.021 ; -0.079                 ;
+; div_clk_1s     ; 0.071  ; 0.000                  ;
+; times[3]       ; 0.352  ; 0.000                  ;
 +----------------+--------+------------------------+
 
 
@@ -436,20 +436,20 @@ No synchronizer chains to report.
 +------------------+-----------+--------+----------+---------+---------------------+
 ; Clock            ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -9.990    ; -0.046 ; -4.004   ; 0.073   ; -0.538              ;
-;  cancel          ; -3.941    ; -0.046 ; N/A      ; N/A     ; -0.307              ;
-;  clock           ; -6.539    ; 0.163  ; -2.558   ; 0.073   ; -0.538              ;
-;  div_clk_10k     ; -2.838    ; 0.230  ; N/A      ; N/A     ; -0.538              ;
-;  div_clk_1s      ; -3.493    ; 0.278  ; N/A      ; N/A     ; -0.538              ;
-;  key:comb_4|KEY  ; -9.990    ; 0.102  ; -4.004   ; 0.924   ; -0.538              ;
-;  times[3]        ; -7.807    ; 0.028  ; N/A      ; N/A     ; 0.200               ;
-; Design-wide TNS  ; -3710.735 ; -0.046 ; -17.813  ; 0.0     ; -475.485            ;
-;  cancel          ; -7.508    ; -0.046 ; N/A      ; N/A     ; -1.157              ;
-;  clock           ; -1116.263 ; 0.000  ; -10.137  ; 0.000   ; -220.536            ;
-;  div_clk_10k     ; -8.990    ; 0.000  ; N/A      ; N/A     ; -3.868              ;
-;  div_clk_1s      ; -70.108   ; 0.000  ; N/A      ; N/A     ; -19.187             ;
-;  key:comb_4|KEY  ; -2359.136 ; 0.000  ; -7.676   ; 0.000   ; -237.281            ;
-;  times[3]        ; -152.141  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack ; -10.096   ; -0.104 ; -4.465   ; -0.025  ; -0.657              ;
+;  cancel          ; -4.183    ; 0.086  ; N/A      ; N/A     ; -0.192              ;
+;  clock           ; -6.678    ; -0.092 ; -2.377   ; -0.025  ; -0.657              ;
+;  div_clk_10k     ; -2.534    ; -0.104 ; N/A      ; N/A     ; -0.538              ;
+;  div_clk_1s      ; -3.751    ; 0.277  ; N/A      ; N/A     ; -0.538              ;
+;  key:comb_4|KEY  ; -10.096   ; 0.084  ; -4.465   ; 1.005   ; -0.538              ;
+;  times[3]        ; -7.180    ; 0.199  ; N/A      ; N/A     ; 0.235               ;
+; Design-wide TNS  ; -3743.02  ; -0.376 ; -17.952  ; -0.025  ; -486.522            ;
+;  cancel          ; -7.758    ; 0.000  ; N/A      ; N/A     ; -0.977              ;
+;  clock           ; -1118.067 ; -0.276 ; -9.472   ; -0.025  ; -221.180            ;
+;  div_clk_10k     ; -11.722   ; -0.118 ; N/A      ; N/A     ; -5.558              ;
+;  div_clk_1s      ; -69.790   ; 0.000  ; N/A      ; N/A     ; -19.188             ;
+;  key:comb_4|KEY  ; -2396.947 ; 0.000  ; -8.480   ; 0.000   ; -244.455            ;
+;  times[3]        ; -143.815  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 +------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -554,8 +554,8 @@ No synchronizer chains to report.
 ; button[1]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; button[2]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; iwanttostep ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; cancel      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; isBomb      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; cancel      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; keypadC[3]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; keypadC[1]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; keypadC[2]  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -922,16 +922,16 @@ No synchronizer chains to report.
 +----------------+----------------+----------+----------+----------+----------+
 ; cancel         ; cancel         ; 0        ; 0        ; 2        ; 4        ;
 ; key:comb_4|KEY ; cancel         ; 0        ; 0        ; 2        ; 0        ;
-; clock          ; clock          ; 43956    ; 0        ; 0        ; 0        ;
+; clock          ; clock          ; 44001    ; 0        ; 0        ; 0        ;
 ; div_clk_1s     ; clock          ; 1        ; 1        ; 0        ; 0        ;
 ; div_clk_10k    ; clock          ; 1        ; 1        ; 0        ; 0        ;
-; key:comb_4|KEY ; clock          ; 4        ; 0        ; 0        ; 0        ;
+; key:comb_4|KEY ; clock          ; 3        ; 0        ; 0        ; 0        ;
 ; div_clk_1s     ; div_clk_1s     ; 333      ; 0        ; 0        ; 0        ;
-; div_clk_10k    ; div_clk_10k    ; 11       ; 0        ; 0        ; 0        ;
+; div_clk_10k    ; div_clk_10k    ; 16       ; 0        ; 0        ; 0        ;
 ; times[3]       ; div_clk_10k    ; 2        ; 2        ; 0        ; 0        ;
-; cancel         ; key:comb_4|KEY ; 515      ; 776      ; 0        ; 0        ;
-; clock          ; key:comb_4|KEY ; 60356    ; 0        ; 0        ; 0        ;
-; key:comb_4|KEY ; key:comb_4|KEY ; 33795    ; 0        ; 0        ; 0        ;
+; cancel         ; key:comb_4|KEY ; 514      ; 774      ; 0        ; 0        ;
+; clock          ; key:comb_4|KEY ; 169408   ; 0        ; 0        ; 0        ;
+; key:comb_4|KEY ; key:comb_4|KEY ; 74498    ; 0        ; 0        ; 0        ;
 ; clock          ; times[3]       ; 16       ; 0        ; 0        ; 0        ;
 ; div_clk_10k    ; times[3]       ; 1400     ; 0        ; 0        ; 0        ;
 ; key:comb_4|KEY ; times[3]       ; 2304     ; 0        ; 0        ; 0        ;
@@ -946,16 +946,16 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------+----------------+----------+----------+----------+----------+
 ; cancel         ; cancel         ; 0        ; 0        ; 2        ; 4        ;
 ; key:comb_4|KEY ; cancel         ; 0        ; 0        ; 2        ; 0        ;
-; clock          ; clock          ; 43956    ; 0        ; 0        ; 0        ;
+; clock          ; clock          ; 44001    ; 0        ; 0        ; 0        ;
 ; div_clk_1s     ; clock          ; 1        ; 1        ; 0        ; 0        ;
 ; div_clk_10k    ; clock          ; 1        ; 1        ; 0        ; 0        ;
-; key:comb_4|KEY ; clock          ; 4        ; 0        ; 0        ; 0        ;
+; key:comb_4|KEY ; clock          ; 3        ; 0        ; 0        ; 0        ;
 ; div_clk_1s     ; div_clk_1s     ; 333      ; 0        ; 0        ; 0        ;
-; div_clk_10k    ; div_clk_10k    ; 11       ; 0        ; 0        ; 0        ;
+; div_clk_10k    ; div_clk_10k    ; 16       ; 0        ; 0        ; 0        ;
 ; times[3]       ; div_clk_10k    ; 2        ; 2        ; 0        ; 0        ;
-; cancel         ; key:comb_4|KEY ; 515      ; 776      ; 0        ; 0        ;
-; clock          ; key:comb_4|KEY ; 60356    ; 0        ; 0        ; 0        ;
-; key:comb_4|KEY ; key:comb_4|KEY ; 33795    ; 0        ; 0        ; 0        ;
+; cancel         ; key:comb_4|KEY ; 514      ; 774      ; 0        ; 0        ;
+; clock          ; key:comb_4|KEY ; 169408   ; 0        ; 0        ; 0        ;
+; key:comb_4|KEY ; key:comb_4|KEY ; 74498    ; 0        ; 0        ; 0        ;
 ; clock          ; times[3]       ; 16       ; 0        ; 0        ; 0        ;
 ; div_clk_10k    ; times[3]       ; 1400     ; 0        ; 0        ; 0        ;
 ; key:comb_4|KEY ; times[3]       ; 2304     ; 0        ; 0        ; 0        ;
@@ -1005,7 +1005,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 13    ; 13   ;
-; Unconstrained Input Port Paths  ; 1432  ; 1432 ;
+; Unconstrained Input Port Paths  ; 1431  ; 1431 ;
 ; Unconstrained Output Ports      ; 80    ; 80   ;
 ; Unconstrained Output Port Paths ; 262   ; 262  ;
 +---------------------------------+-------+------+
@@ -1249,7 +1249,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat Dec 31 00:23:57 2016
+    Info: Processing started: Tue Jan 03 17:36:24 2017
 Info: Command: quartus_sta bomb -c bomb
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1268,190 +1268,190 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name times[3] times[3]
 Warning (332125): Found combinational loop of 4 nodes File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 12
     Warning (332126): Node "verf~9|combout"
-    Warning (332126): Node "verf~2|datab"
+    Warning (332126): Node "verf~2|dataa"
     Warning (332126): Node "verf~2|combout"
-    Warning (332126): Node "verf~9|dataf"
-Warning (332125): Found combinational loop of 4 nodes File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 24
+    Warning (332126): Node "verf~9|datad"
+Warning (332125): Found combinational loop of 4 nodes File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 25
     Warning (332126): Node "second~2|combout"
     Warning (332126): Node "second~6|datad"
     Warning (332126): Node "second~6|combout"
-    Warning (332126): Node "second~2|datab"
+    Warning (332126): Node "second~2|datac"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.841
+Info (332146): Worst-case setup slack is -10.012
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.841           -2316.094 key:comb_4|KEY 
-    Info (332119):    -7.807            -152.141 times[3] 
-    Info (332119):    -6.424           -1116.263 clock 
-    Info (332119):    -3.935              -7.508 cancel 
-    Info (332119):    -3.489             -69.778 div_clk_1s 
-    Info (332119):    -2.838              -8.990 div_clk_10k 
-Info (332146): Worst-case hold slack is 0.333
+    Info (332119):   -10.012           -2351.795 key:comb_4|KEY 
+    Info (332119):    -7.180            -143.815 times[3] 
+    Info (332119):    -6.513           -1111.468 clock 
+    Info (332119):    -4.183              -7.758 cancel 
+    Info (332119):    -3.751             -69.790 div_clk_1s 
+    Info (332119):    -2.521             -11.637 div_clk_10k 
+Info (332146): Worst-case hold slack is 0.193
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.333               0.000 key:comb_4|KEY 
-    Info (332119):     0.418               0.000 clock 
-    Info (332119):     0.691               0.000 times[3] 
-    Info (332119):     0.697               0.000 div_clk_10k 
-    Info (332119):     0.814               0.000 cancel 
-    Info (332119):     0.834               0.000 div_clk_1s 
-Info (332146): Worst-case recovery slack is -4.004
+    Info (332119):     0.193               0.000 div_clk_10k 
+    Info (332119):     0.319               0.000 key:comb_4|KEY 
+    Info (332119):     0.424               0.000 clock 
+    Info (332119):     0.774               0.000 div_clk_1s 
+    Info (332119):     0.954               0.000 times[3] 
+    Info (332119):     1.144               0.000 cancel 
+Info (332146): Worst-case recovery slack is -4.465
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.004              -7.676 key:comb_4|KEY 
-    Info (332119):    -2.558             -10.137 clock 
-Info (332146): Worst-case removal slack is 1.287
+    Info (332119):    -4.465              -8.480 key:comb_4|KEY 
+    Info (332119):    -2.377              -9.472 clock 
+Info (332146): Worst-case removal slack is 1.082
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.287               0.000 clock 
-    Info (332119):     2.456               0.000 key:comb_4|KEY 
-Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     1.082               0.000 clock 
+    Info (332119):     2.628               0.000 key:comb_4|KEY 
+Info (332146): Worst-case minimum pulse width slack is -0.629
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -237.281 key:comb_4|KEY 
-    Info (332119):    -0.538            -214.895 clock 
-    Info (332119):    -0.538             -19.169 div_clk_1s 
-    Info (332119):    -0.538              -3.848 div_clk_10k 
-    Info (332119):    -0.131              -0.292 cancel 
-    Info (332119):     0.200               0.000 times[3] 
+    Info (332119):    -0.629            -216.132 clock 
+    Info (332119):    -0.538            -244.455 key:comb_4|KEY 
+    Info (332119):    -0.538             -19.188 div_clk_1s 
+    Info (332119):    -0.538              -5.558 div_clk_10k 
+    Info (332119):     0.076               0.000 cancel 
+    Info (332119):     0.235               0.000 times[3] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.990
+Info (332146): Worst-case setup slack is -10.096
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.990           -2359.136 key:comb_4|KEY 
-    Info (332119):    -7.726            -149.690 times[3] 
-    Info (332119):    -6.539           -1115.447 clock 
-    Info (332119):    -3.941              -7.410 cancel 
-    Info (332119):    -3.493             -70.108 div_clk_1s 
-    Info (332119):    -2.741              -8.944 div_clk_10k 
-Info (332146): Worst-case hold slack is 0.296
+    Info (332119):   -10.096           -2396.947 key:comb_4|KEY 
+    Info (332119):    -7.000            -140.690 times[3] 
+    Info (332119):    -6.678           -1118.067 clock 
+    Info (332119):    -3.882              -7.460 cancel 
+    Info (332119):    -3.641             -68.134 div_clk_1s 
+    Info (332119):    -2.534             -11.722 div_clk_10k 
+Info (332146): Worst-case hold slack is 0.280
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.296               0.000 key:comb_4|KEY 
-    Info (332119):     0.433               0.000 clock 
-    Info (332119):     0.523               0.000 times[3] 
-    Info (332119):     0.578               0.000 cancel 
-    Info (332119):     0.774               0.000 div_clk_10k 
-    Info (332119):     0.848               0.000 div_clk_1s 
-Info (332146): Worst-case recovery slack is -3.945
+    Info (332119):     0.280               0.000 key:comb_4|KEY 
+    Info (332119):     0.360               0.000 div_clk_10k 
+    Info (332119):     0.430               0.000 clock 
+    Info (332119):     0.745               0.000 div_clk_1s 
+    Info (332119):     0.801               0.000 times[3] 
+    Info (332119):     0.804               0.000 cancel 
+Info (332146): Worst-case recovery slack is -4.420
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.945              -7.550 key:comb_4|KEY 
-    Info (332119):    -2.256              -8.855 clock 
-Info (332146): Worst-case removal slack is 0.824
+    Info (332119):    -4.420              -8.392 key:comb_4|KEY 
+    Info (332119):    -1.977              -7.882 clock 
+Info (332146): Worst-case removal slack is 0.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.824               0.000 clock 
-    Info (332119):     2.399               0.000 key:comb_4|KEY 
-Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     0.633               0.000 clock 
+    Info (332119):     2.539               0.000 key:comb_4|KEY 
+Info (332146): Worst-case minimum pulse width slack is -0.657
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -229.433 key:comb_4|KEY 
-    Info (332119):    -0.538            -220.536 clock 
-    Info (332119):    -0.538             -19.187 div_clk_1s 
-    Info (332119):    -0.538              -3.868 div_clk_10k 
-    Info (332119):    -0.112              -0.208 cancel 
-    Info (332119):     0.265               0.000 times[3] 
+    Info (332119):    -0.657            -221.180 clock 
+    Info (332119):    -0.538            -240.860 key:comb_4|KEY 
+    Info (332119):    -0.538             -19.094 div_clk_1s 
+    Info (332119):    -0.538              -5.388 div_clk_10k 
+    Info (332119):     0.047               0.000 cancel 
+    Info (332119):     0.311               0.000 times[3] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.950
+Info (332146): Worst-case setup slack is -5.246
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.950           -1142.852 key:comb_4|KEY 
-    Info (332119):    -3.627             -69.348 times[3] 
-    Info (332119):    -3.540            -416.153 clock 
-    Info (332119):    -1.556              -3.023 cancel 
-    Info (332119):    -1.484             -26.856 div_clk_1s 
-    Info (332119):    -1.372              -3.661 div_clk_10k 
-Info (332146): Worst-case hold slack is 0.094
+    Info (332119):    -5.246           -1168.057 key:comb_4|KEY 
+    Info (332119):    -3.587            -415.561 clock 
+    Info (332119):    -3.470             -67.607 times[3] 
+    Info (332119):    -1.779              -3.162 cancel 
+    Info (332119):    -1.639             -27.451 div_clk_1s 
+    Info (332119):    -1.056              -4.142 div_clk_10k 
+Info (332146): Worst-case hold slack is -0.104
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.094               0.000 cancel 
-    Info (332119):     0.101               0.000 times[3] 
-    Info (332119):     0.129               0.000 key:comb_4|KEY 
-    Info (332119):     0.181               0.000 clock 
-    Info (332119):     0.267               0.000 div_clk_10k 
+    Info (332119):    -0.104              -0.118 div_clk_10k 
+    Info (332119):     0.106               0.000 key:comb_4|KEY 
+    Info (332119):     0.132               0.000 clock 
+    Info (332119):     0.251               0.000 cancel 
+    Info (332119):     0.287               0.000 times[3] 
     Info (332119):     0.302               0.000 div_clk_1s 
-Info (332146): Worst-case recovery slack is -2.346
+Info (332146): Worst-case recovery slack is -2.689
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.346              -4.384 key:comb_4|KEY 
-    Info (332119):    -1.101              -4.188 clock 
-Info (332146): Worst-case removal slack is 0.315
+    Info (332119):    -2.689              -5.034 key:comb_4|KEY 
+    Info (332119):    -1.064              -4.195 clock 
+Info (332146): Worst-case removal slack is 0.208
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.315               0.000 clock 
-    Info (332119):     0.970               0.000 key:comb_4|KEY 
-Info (332146): Worst-case minimum pulse width slack is -0.453
+    Info (332119):     0.208               0.000 clock 
+    Info (332119):     1.063               0.000 key:comb_4|KEY 
+Info (332146): Worst-case minimum pulse width slack is -0.560
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.453             -27.154 clock 
-    Info (332119):    -0.307              -1.157 cancel 
-    Info (332119):    -0.127             -13.476 key:comb_4|KEY 
-    Info (332119):    -0.101              -0.404 div_clk_10k 
+    Info (332119):    -0.560             -27.842 clock 
+    Info (332119):    -0.192              -0.977 cancel 
+    Info (332119):    -0.148             -17.385 key:comb_4|KEY 
+    Info (332119):    -0.071              -0.334 div_clk_10k 
     Info (332119):     0.047               0.000 div_clk_1s 
-    Info (332119):     0.265               0.000 times[3] 
+    Info (332119):     0.313               0.000 times[3] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.541
+Info (332146): Worst-case setup slack is -4.791
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.541           -1050.821 key:comb_4|KEY 
-    Info (332119):    -3.217            -366.349 clock 
-    Info (332119):    -3.197             -60.732 times[3] 
-    Info (332119):    -1.306             -23.764 div_clk_1s 
-    Info (332119):    -1.267              -2.501 cancel 
-    Info (332119):    -1.227              -3.182 div_clk_10k 
-Info (332146): Worst-case hold slack is -0.046
+    Info (332119):    -4.791           -1079.090 key:comb_4|KEY 
+    Info (332119):    -3.256            -367.255 clock 
+    Info (332119):    -3.012             -58.650 times[3] 
+    Info (332119):    -1.430             -23.905 div_clk_1s 
+    Info (332119):    -1.387              -2.488 cancel 
+    Info (332119):    -0.917              -3.566 div_clk_10k 
+Info (332146): Worst-case hold slack is -0.100
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.046              -0.046 cancel 
-    Info (332119):     0.028               0.000 times[3] 
-    Info (332119):     0.102               0.000 key:comb_4|KEY 
-    Info (332119):     0.163               0.000 clock 
-    Info (332119):     0.230               0.000 div_clk_10k 
-    Info (332119):     0.278               0.000 div_clk_1s 
-Info (332146): Worst-case recovery slack is -2.217
+    Info (332119):    -0.100              -0.100 div_clk_10k 
+    Info (332119):    -0.092              -0.276 clock 
+    Info (332119):     0.084               0.000 key:comb_4|KEY 
+    Info (332119):     0.086               0.000 cancel 
+    Info (332119):     0.199               0.000 times[3] 
+    Info (332119):     0.277               0.000 div_clk_1s 
+Info (332146): Worst-case recovery slack is -2.511
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.217              -4.156 key:comb_4|KEY 
-    Info (332119):    -0.742              -2.836 clock 
-Info (332146): Worst-case removal slack is 0.073
+    Info (332119):    -2.511              -4.721 key:comb_4|KEY 
+    Info (332119):    -0.701              -2.753 clock 
+Info (332146): Worst-case removal slack is -0.025
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.073               0.000 clock 
-    Info (332119):     0.924               0.000 key:comb_4|KEY 
-Info (332146): Worst-case minimum pulse width slack is -0.462
+    Info (332119):    -0.025              -0.025 clock 
+    Info (332119):     1.005               0.000 key:comb_4|KEY 
+Info (332146): Worst-case minimum pulse width slack is -0.535
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.462             -27.354 clock 
-    Info (332119):    -0.248              -0.946 cancel 
-    Info (332119):    -0.056              -0.224 div_clk_10k 
-    Info (332119):    -0.054              -2.475 key:comb_4|KEY 
-    Info (332119):     0.069               0.000 div_clk_1s 
-    Info (332119):     0.311               0.000 times[3] 
+    Info (332119):    -0.535             -28.040 clock 
+    Info (332119):    -0.166              -0.846 cancel 
+    Info (332119):    -0.081              -7.691 key:comb_4|KEY 
+    Info (332119):    -0.021              -0.079 div_clk_10k 
+    Info (332119):     0.071               0.000 div_clk_1s 
+    Info (332119):     0.352               0.000 times[3] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 1175 megabytes
-    Info: Processing ended: Sat Dec 31 00:24:07 2016
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 1172 megabytes
+    Info: Processing ended: Tue Jan 03 17:36:35 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:14
 
 

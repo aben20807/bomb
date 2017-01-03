@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bomb
-Sat Dec 31 00:22:37 2016
+Tue Jan 03 17:34:49 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec 31 00:22:37 2016       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jan 03 17:34:49 2017       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; bomb                                        ;
 ; Top-level Entity Name           ; bomb                                        ;
@@ -187,14 +187,14 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 630         ;
+; Estimate of Logic utilization (ALMs needed) ; 679         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 927         ;
-;     -- 7 input functions                    ; 33          ;
-;     -- 6 input functions                    ; 300         ;
-;     -- 5 input functions                    ; 66          ;
-;     -- 4 input functions                    ; 240         ;
-;     -- <=3 input functions                  ; 288         ;
+; Combinational ALUT usage for logic          ; 972         ;
+;     -- 7 input functions                    ; 1           ;
+;     -- 6 input functions                    ; 385         ;
+;     -- 5 input functions                    ; 60          ;
+;     -- 4 input functions                    ; 173         ;
+;     -- <=3 input functions                  ; 353         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 531         ;
 ;                                             ;             ;
@@ -204,8 +204,8 @@ agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
 ; Maximum fan-out                             ; 444         ;
-; Total fan-out                               ; 5932        ;
-; Average fan-out                             ; 3.60        ;
+; Total fan-out                               ; 6115        ;
+; Average fan-out                             ; 3.62        ;
 +---------------------------------------------+-------------+
 
 
@@ -214,7 +214,7 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name  ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------+--------------+--------------+
-; |bomb                      ; 927 (675)         ; 531 (389)    ; 0                 ; 0          ; 94   ; 0            ; |bomb                               ; bomb         ; work         ;
+; |bomb                      ; 972 (720)         ; 531 (389)    ; 0                 ; 0          ; 94   ; 0            ; |bomb                               ; bomb         ; work         ;
 ;    |Seven:s1|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s1                      ; Seven        ; work         ;
 ;    |Seven:s2|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s2                      ; Seven        ; work         ;
 ;    |Seven:s3|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s3                      ; Seven        ; work         ;
@@ -223,10 +223,10 @@ agreement for further details.
 ;    |Seven:s6|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|Seven:s6                      ; Seven        ; work         ;
 ;    |key:comb_4|            ; 54 (50)           ; 34 (34)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|key:comb_4                    ; key          ; work         ;
 ;       |SevenSegment:seven| ; 4 (4)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |bomb|key:comb_4|SevenSegment:seven ; SevenSegment ; work         ;
-;    |move:comb_4176|        ; 39 (39)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_4176                ; move         ; work         ;
 ;    |move:comb_4177|        ; 39 (39)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_4177                ; move         ; work         ;
 ;    |move:comb_4178|        ; 39 (39)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_4178                ; move         ; work         ;
 ;    |move:comb_4179|        ; 39 (39)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_4179                ; move         ; work         ;
+;    |move:comb_4180|        ; 39 (39)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |bomb|move:comb_4180                ; move         ; work         ;
 +----------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -295,15 +295,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|key:comb_4|keypadDelay[19]     ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|key:comb_4|keypadDelay[10]     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bomb|key:comb_4|keypadRow[1]        ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4176|delayButton[16] ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4177|delayButton[6]  ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4178|delayButton[22] ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4179|delayButton[18] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4177|delayButton[21] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4178|delayButton[12] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4179|delayButton[14] ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |bomb|move:comb_4180|delayButton[6]  ;
 ; 258:1              ; 4 bits    ; 688 LEs       ; 44 LEs               ; 644 LEs                ; Yes        ; |bomb|key:comb_4|keypadBuf[3]        ;
 ; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |bomb|Add1                           ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |bomb|Mux5                           ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |bomb|Mux0                           ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |bomb|Mux2                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
@@ -337,24 +338,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 104                         ;
 ;     ENA SLD           ; 3                           ;
 ;     SCLR              ; 35                          ;
-; arriav_lcell_comb     ; 935                         ;
+; arriav_lcell_comb     ; 980                         ;
 ;     arith             ; 237                         ;
 ;         1 data inputs ; 221                         ;
 ;         4 data inputs ; 8                           ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 33                          ;
-;         7 data inputs ; 33                          ;
-;     normal            ; 665                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 742                         ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 31                          ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 232                         ;
-;         5 data inputs ; 58                          ;
-;         6 data inputs ; 300                         ;
+;         3 data inputs ; 100                         ;
+;         4 data inputs ; 165                         ;
+;         5 data inputs ; 52                          ;
+;         6 data inputs ; 385                         ;
 ; boundary_port         ; 94                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.61                        ;
+; Average LUT depth     ; 4.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,7 +364,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -373,134 +374,134 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat Dec 31 00:22:24 2016
+    Info: Processing started: Tue Jan 03 17:34:32 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bomb -c bomb
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 5 design units, including 5 entities, in source file bomb.v
     Info (12023): Found entity 1: bomb File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 1
-    Info (12023): Found entity 2: Seven File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 407
-    Info (12023): Found entity 3: move File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 435
-    Info (12023): Found entity 4: key File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 471
+    Info (12023): Found entity 2: Seven File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 410
+    Info (12023): Found entity 3: move File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 438
+    Info (12023): Found entity 4: key File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 474
     Info (12023): Found entity 5: SevenSegment File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 608
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(37): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 37
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(294): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 294
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(295): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 295
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(296): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 296
-Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(297): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 297
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(36): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 36
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(298): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 298
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(299): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 299
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(300): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 300
+Critical Warning (10846): Verilog HDL Instantiation warning at bomb.v(301): instance has no name File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 301
 Info (12127): Elaborating entity "bomb" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at bomb.v(19): object "gameover" assigned a value but never read File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 19
-Warning (10230): Verilog HDL assignment warning at bomb.v(49): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 49
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(109): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 109
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(121): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(121): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(121): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(126): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 126
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(126): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 126
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(126): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 126
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(131): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 131
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(131): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 131
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(131): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 131
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(136): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 136
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(136): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 136
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(136): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 136
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(141): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 141
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(141): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 141
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(141): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 141
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(146): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 146
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(146): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 146
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(146): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 146
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(151): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 151
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(151): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 151
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(151): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 151
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(156): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 156
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(156): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 156
-Warning (10235): Verilog HDL Always Construct warning at bomb.v(156): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 156
-Warning (10270): Verilog HDL Case Statement warning at bomb.v(117): incomplete case statement has no default case item File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Warning (10240): Verilog HDL Always Construct warning at bomb.v(107): inferring latch(es) for variable "dotC", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 107
-Warning (10240): Verilog HDL Always Construct warning at bomb.v(107): inferring latch(es) for variable "dotR", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 107
-Warning (10230): Verilog HDL assignment warning at bomb.v(168): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 168
-Warning (10230): Verilog HDL assignment warning at bomb.v(175): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 175
-Warning (10230): Verilog HDL assignment warning at bomb.v(251): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 251
+Warning (10036): Verilog HDL or VHDL warning at bomb.v(26): object "gameover" assigned a value but never read File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 26
+Warning (10230): Verilog HDL assignment warning at bomb.v(48): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(113): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 113
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(125): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 125
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(125): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 125
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(125): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 125
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(130): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(130): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(130): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 130
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(135): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 135
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(135): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 135
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(135): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 135
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(140): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 140
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(140): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 140
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(140): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 140
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(145): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 145
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(145): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 145
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(145): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 145
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(150): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 150
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(150): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 150
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(150): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 150
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(155): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(155): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(155): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 155
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(160): variable "twinkle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 160
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(160): variable "pos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 160
+Warning (10235): Verilog HDL Always Construct warning at bomb.v(160): variable "twink" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 160
+Warning (10270): Verilog HDL Case Statement warning at bomb.v(121): incomplete case statement has no default case item File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(111): inferring latch(es) for variable "dotC", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 111
+Warning (10240): Verilog HDL Always Construct warning at bomb.v(111): inferring latch(es) for variable "dotR", which holds its previous value in one or more paths through the always construct File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 111
+Warning (10230): Verilog HDL assignment warning at bomb.v(172): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 172
+Warning (10230): Verilog HDL assignment warning at bomb.v(179): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 179
 Warning (10230): Verilog HDL assignment warning at bomb.v(255): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 255
-Warning (10230): Verilog HDL assignment warning at bomb.v(260): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 260
-Warning (10230): Verilog HDL assignment warning at bomb.v(265): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 265
-Warning (10230): Verilog HDL assignment warning at bomb.v(270): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 270
-Warning (10230): Verilog HDL assignment warning at bomb.v(275): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 275
-Warning (10230): Verilog HDL assignment warning at bomb.v(306): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 306
-Warning (10230): Verilog HDL assignment warning at bomb.v(308): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 308
+Warning (10230): Verilog HDL assignment warning at bomb.v(259): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 259
+Warning (10230): Verilog HDL assignment warning at bomb.v(264): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 264
+Warning (10230): Verilog HDL assignment warning at bomb.v(269): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 269
+Warning (10230): Verilog HDL assignment warning at bomb.v(274): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 274
+Warning (10230): Verilog HDL assignment warning at bomb.v(279): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 279
 Warning (10230): Verilog HDL assignment warning at bomb.v(310): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 310
-Warning (10230): Verilog HDL assignment warning at bomb.v(315): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 315
-Warning (10230): Verilog HDL assignment warning at bomb.v(317): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 317
+Warning (10230): Verilog HDL assignment warning at bomb.v(312): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 312
+Warning (10230): Verilog HDL assignment warning at bomb.v(314): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 314
 Warning (10230): Verilog HDL assignment warning at bomb.v(319): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 319
 Warning (10230): Verilog HDL assignment warning at bomb.v(321): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 321
-Warning (10230): Verilog HDL assignment warning at bomb.v(326): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 326
-Warning (10230): Verilog HDL assignment warning at bomb.v(328): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 328
+Warning (10230): Verilog HDL assignment warning at bomb.v(323): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 323
+Warning (10230): Verilog HDL assignment warning at bomb.v(325): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 325
 Warning (10230): Verilog HDL assignment warning at bomb.v(330): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 330
 Warning (10230): Verilog HDL assignment warning at bomb.v(332): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 332
-Warning (10230): Verilog HDL assignment warning at bomb.v(337): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 337
-Warning (10230): Verilog HDL assignment warning at bomb.v(339): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 339
+Warning (10230): Verilog HDL assignment warning at bomb.v(334): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 334
+Warning (10230): Verilog HDL assignment warning at bomb.v(336): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 336
 Warning (10230): Verilog HDL assignment warning at bomb.v(341): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 341
-Warning (10230): Verilog HDL assignment warning at bomb.v(346): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 346
-Warning (10230): Verilog HDL assignment warning at bomb.v(348): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 348
+Warning (10230): Verilog HDL assignment warning at bomb.v(343): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 343
+Warning (10230): Verilog HDL assignment warning at bomb.v(345): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 345
 Warning (10230): Verilog HDL assignment warning at bomb.v(350): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 350
-Warning (10230): Verilog HDL assignment warning at bomb.v(355): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 355
-Warning (10230): Verilog HDL assignment warning at bomb.v(357): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 357
+Warning (10230): Verilog HDL assignment warning at bomb.v(352): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 352
+Warning (10230): Verilog HDL assignment warning at bomb.v(354): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 354
 Warning (10230): Verilog HDL assignment warning at bomb.v(359): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 359
 Warning (10230): Verilog HDL assignment warning at bomb.v(361): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 361
-Warning (10230): Verilog HDL assignment warning at bomb.v(366): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 366
-Warning (10230): Verilog HDL assignment warning at bomb.v(368): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 368
+Warning (10230): Verilog HDL assignment warning at bomb.v(363): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 363
+Warning (10230): Verilog HDL assignment warning at bomb.v(365): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 365
 Warning (10230): Verilog HDL assignment warning at bomb.v(370): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 370
 Warning (10230): Verilog HDL assignment warning at bomb.v(372): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 372
-Warning (10230): Verilog HDL assignment warning at bomb.v(377): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 377
-Warning (10230): Verilog HDL assignment warning at bomb.v(379): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 379
+Warning (10230): Verilog HDL assignment warning at bomb.v(374): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 374
+Warning (10230): Verilog HDL assignment warning at bomb.v(376): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 376
 Warning (10230): Verilog HDL assignment warning at bomb.v(381): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 381
-Warning (10230): Verilog HDL assignment warning at bomb.v(384): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 384
-Info (10041): Inferred latch for "dotR[0]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[1]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[2]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[3]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[4]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[5]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[6]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotR[7]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[0]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[1]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[2]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[3]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[4]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[5]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[6]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[7]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[8]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[9]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[10]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[11]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[12]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[13]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[14]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (10041): Inferred latch for "dotC[15]" at bomb.v(117) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 117
-Info (12128): Elaborating entity "key" for hierarchy "key:comb_4" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 37
-Info (12128): Elaborating entity "SevenSegment" for hierarchy "key:comb_4|SevenSegment:seven" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 485
-Info (12128): Elaborating entity "Seven" for hierarchy "Seven:s1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 286
-Info (12128): Elaborating entity "move" for hierarchy "move:comb_4176" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 294
+Warning (10230): Verilog HDL assignment warning at bomb.v(383): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 383
+Warning (10230): Verilog HDL assignment warning at bomb.v(385): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 385
+Warning (10230): Verilog HDL assignment warning at bomb.v(388): truncated value with size 32 to match size of target (4) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 388
+Info (10041): Inferred latch for "dotR[0]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[1]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[2]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[3]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[4]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[5]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[6]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotR[7]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[0]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[1]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[2]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[3]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[4]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[5]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[6]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[7]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[8]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[9]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[10]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[11]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[12]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[13]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[14]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (10041): Inferred latch for "dotC[15]" at bomb.v(121) File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 121
+Info (12128): Elaborating entity "key" for hierarchy "key:comb_4" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 36
+Info (12128): Elaborating entity "SevenSegment" for hierarchy "key:comb_4|SevenSegment:seven" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 487
+Info (12128): Elaborating entity "Seven" for hierarchy "Seven:s1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 290
+Info (12128): Elaborating entity "move" for hierarchy "move:comb_4177" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 298
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "State[3]" is converted into an equivalent circuit using register "State[3]~_emulated" and latch "State[3]~1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 178
+    Warning (13310): Register "State[3]" is converted into an equivalent circuit using register "State[3]~_emulated" and latch "State[3]~1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 182
     Warning (13310): Register "verf~reg0" is converted into an equivalent circuit using register "verf~reg0_emulated" and latch "verf~1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 12
-    Warning (13310): Register "second" is converted into an equivalent circuit using register "second~_emulated" and latch "second~1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 24
+    Warning (13310): Register "second" is converted into an equivalent circuit using register "second~_emulated" and latch "second~1" File: D:/cygwin/home/user/pro/col3/bomb/bomb.v Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/cygwin/home/user/pro/col3/bomb/output_files/bomb.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1121 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1167 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 80 output pins
-    Info (21061): Implemented 1027 logic cells
+    Info (21061): Implemented 1073 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 907 megabytes
-    Info: Processing ended: Sat Dec 31 00:22:37 2016
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 921 megabytes
+    Info: Processing ended: Tue Jan 03 17:34:49 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
