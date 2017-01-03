@@ -269,10 +269,10 @@ stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
-stop => always6.IN1
+stop => always10.IN1
 stop => second.ENA
-iwanttostep => always1.IN1
-isBomb => always1.IN1
+iwanttostep => always5.IN1
+isBomb => always5.IN1
 cancel => verf.IN0
 cancel => type.101.OUTPUTSELECT
 cancel => type.100.OUTPUTSELECT
@@ -535,24 +535,24 @@ cancel => twink[3].ENA
 cancel => twink[2].ENA
 cancel => twink[1].ENA
 cancel => twink[0].ENA
-led[0] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
-led[1] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-led[2] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-led[3] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-led[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-led[5] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-led[6] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-led[7] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+led[0] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 verf <= verf~reg0.DB_MAX_OUTPUT_PORT_TYPE
 verf1 <= verf~reg0.DB_MAX_OUTPUT_PORT_TYPE
 keypadC[0] => keypadC[0].IN1
 keypadC[1] => keypadC[1].IN1
 keypadC[2] => keypadC[2].IN1
 keypadC[3] => keypadC[3].IN1
-keypadR[0] <= key:comb_4.keypadRow
-keypadR[1] <= key:comb_4.keypadRow
-keypadR[2] <= key:comb_4.keypadRow
-keypadR[3] <= key:comb_4.keypadRow
+keypadR[0] <= key:comb_474.keypadRow
+keypadR[1] <= key:comb_474.keypadRow
+keypadR[2] <= key:comb_474.keypadRow
+keypadR[3] <= key:comb_474.keypadRow
 dotC[0] <= dotC[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 dotC[1] <= dotC[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 dotC[2] <= dotC[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -635,7 +635,7 @@ vga_b[2] <= vga_b[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vga_b[3] <= vga_b[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|key:comb_4
+|bomb|key:comb_474
 clk => KEY~reg0.CLK
 clk => keypadDelay[0].CLK
 clk => keypadDelay[1].CLK
@@ -719,7 +719,7 @@ keypadCol[3] => Decoder0.IN0
 KEY <= KEY~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|key:comb_4|SevenSegment:seven
+|bomb|key:comb_474|SevenSegment:seven
 in[0] => Decoder0.IN3
 in[1] => Decoder0.IN2
 in[1] => Decoder1.IN2
@@ -817,7 +817,7 @@ sout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 sout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_5698
+|bomb|move:comb_6860
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -876,7 +876,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_5699
+|bomb|move:comb_6861
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -935,7 +935,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_5700
+|bomb|move:comb_6862
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -994,7 +994,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_5701
+|bomb|move:comb_6863
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK

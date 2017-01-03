@@ -1,5 +1,5 @@
 module bomb(reset, clock, button, stop, iwanttostep, isBomb, cancel, led, verf, verf1, keypadC, keypadR, dotC, dotR, hex1, hex2, hex3, hex4, hex5, hex6, vga_hs, vga_vs, vga_r, vga_g, vga_b);
-
+`define fre 32'd50000000
 input clock, reset, stop, cancel, isBomb, iwanttostep;
 input [3:0]button;
 input [3:0]keypadC;
@@ -10,11 +10,7 @@ output [7:0]dotR;
 output [6:0]hex1, hex2, hex3, hex4, hex5, hex6;
 output [7:0]led;
 output verf, verf1;
-//output VGA_HS, VGA_VS;
-//output [3:0]VGA_R, VGA_G, VGA_B;
 
-//wire VGA_HS, VGA_VS;
-//wire [3:0]VGA_R, VGA_G, VGA_B;
 reg [15:0]dotC;
 reg [7:0]dotR;
 reg [31:0]cnt1, cnt2, cnt3;//1s, 10k, 0.5s
@@ -29,13 +25,12 @@ reg [127:0]pos, twink;
 reg second;//count if click twice
 reg gameover;
 reg verf;
+reg win;
 wire verf1;
 wire [3:0]isMove;
 wire [3:0]index;
 wire K;
-//wire [2:0]type;
-//wire typeGameover;
-parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7, S8 = 8;
+parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7, S8 = 8, S9 = 9;
 
 reg [2:0]type;
 reg typeGameover;
@@ -44,17 +39,76 @@ output [3:0] vga_r, vga_g, vga_b;
 
 reg vga_hs, vga_vs;
 reg [3:0] vga_r, vga_g, vga_b;
-//reg [2:0]type;
-//reg typeGameover;
 reg [10:0] counths;
 reg [9:0] countvs;
 reg [9:0] p_h, p_v;
 reg valid;
 
+reg [31:0]c1,c3;
+reg [1:0]c2;
+reg [2:0]c4;
+reg [31:0]c5,c7;
+reg c6;
+reg [2:0]c8;
+
+always @(posedge clock)
+begin
+	if(c5 == `fre/4)
+	begin
+		c5 = 0;
+		c6 = c6 + 1;
+	end
+	else 
+	begin 
+		c5 = c5 + 1;
+	end	
+end
+
+always @(posedge clock)
+begin
+	if(c7 == 5000)
+	begin
+		c7 = 0;
+		c8 = c8 + 1;
+	end
+	else 
+		c7 = c7 + 1;
+end
+
+always @(posedge clock)
+begin
+	
+if(c1 == `fre/2)
+	begin
+		c1 = 0;
+		c2 = c2 + 1;
+		if(c2 == 4)
+		begin
+			c2 = 0;
+		end
+	end
+	else 
+	begin 
+		c1 = c1 + 1;
+	end	
+end
+
+always @(posedge clock)
+begin
+	if(c3 == 5000)
+	begin
+		c3 = 0;
+		c4 = c4 + 1;
+	end
+	else
+	begin
+		c3 = c3 + 1;
+	end
+end
+
 assign verf1 = verf;
 
 key(.clk(clock), .rst(reset), .Data(index), .keypadRow(keypadR), .keypadCol(keypadC), .KEY(K));
-//VGA(.clk(clock), .rst(reset), .vga_hs(VGA_HS), .vga_vs(VGA_VS), .vga_r(VGA_R), .vga_g(VGA_G), .vga_b(VGA_B), .type(type), .typeGameover(typeGameover));
 
 /*scan all rows using 10 KHz*/
 always @(negedge reset or posedge div_clk_10k)
@@ -76,6 +130,7 @@ begin
 	begin
 		type <= 0;
 		pos[127:0] <= 0;
+//		pos[127:0] <= -1-(1<<87)-(1<<86)-(1<<85);
 		twink[127:0] <= 0 ;
 		second <= 0;
 		verf <= 1;
@@ -167,7 +222,104 @@ begin
 		dotC = 16'b0000000000000000;
 		dotR = 8'b11111111;
 	end
-	else
+	else if(win)
+	begin
+		begin
+			if(c2 == 0)
+			begin
+				case(c4)
+					0:dotR=8'b01111111;
+					1:dotR=8'b10111111;
+					2:dotR=8'b11011111;
+					3:dotR=8'b11101111;
+					4:dotR=8'b11110111;
+					5:dotR=8'b11111011;
+					6:dotR=8'b11111101;
+					7:dotR=8'b11111110;
+				endcase
+				case(c4)
+					0:dotC=16'b0000_0000_0000_0000;
+					1:dotC=16'b1110_1110_1110_1110;
+					2:dotC=16'b0010_0010_0010_0010;
+					3:dotC=16'b1110_1110_1110_1110;
+					4:dotC=16'b1010_1010_1010_1010;
+					5:dotC=16'b1110_1110_1110_1110;
+					6:dotC=16'b0000_0000_0000_0000;
+					7:dotC=16'b0000_0000_0000_0000;
+				endcase
+			end
+			else if(c2 == 3)
+			begin
+				case(c4)
+					0:dotR=8'b01111111;
+					1:dotR=8'b10111111;
+					2:dotR=8'b11011111;
+					3:dotR=8'b11101111;
+					4:dotR=8'b11110111;
+					5:dotR=8'b11111011;
+					6:dotR=8'b11111101;
+					7:dotR=8'b11111110;
+				endcase
+				case(c4)
+					0:dotC=16'b0000_0000_0000_0000;
+					1:dotC=16'b1101110_1110_11101;
+					2:dotC=16'b0100010001000100;
+					3:dotC=16'b1101110_1110_11101;
+					4:dotC=16'b0101010_1010_10101;
+					5:dotC=16'b1101110_1110_11101;
+					6:dotC=16'b0000_0000_0000_0000;
+					7:dotC=16'b0000_0000_0000_0000;
+				endcase
+			end
+			else if(c2 == 2)
+			begin
+				case(c4)
+					0:dotR=8'b01111111;
+					1:dotR=8'b10111111;
+					2:dotR=8'b11011111;
+					3:dotR=8'b11101111;
+					4:dotR=8'b11110111;
+					5:dotR=8'b11111011;
+					6:dotR=8'b11111101;
+					7:dotR=8'b11111110;
+				endcase
+				case(c4)
+					0:dotC=16'b0000_0000_0000_0000;
+					1:dotC=16'b10_1110_1110_111011;
+					2:dotC=16'b1000100010001000;
+					3:dotC=16'b10_1110_1110_111011;
+					4:dotC=16'b10_1010_1010_101010;
+					5:dotC=16'b10_1110_1110_111011;
+					6:dotC=16'b0000_0000_0000_0000;
+					7:dotC=16'b0000_0000_0000_0000;
+				endcase
+			end
+			else
+			begin
+				case(c4)
+					0:dotR=8'b01111111;
+					1:dotR=8'b10111111;
+					2:dotR=8'b11011111;
+					3:dotR=8'b11101111;
+					4:dotR=8'b11110111;
+					5:dotR=8'b11111011;
+					6:dotR=8'b11111101;
+					7:dotR=8'b11111110;
+				endcase
+				case(c4)
+					0:dotC=16'b0000_0000_0000_0000;
+					1:dotC=16'b0_1110_1110_1110111;
+					2:dotC=16'b0001000100010001;
+					3:dotC=16'b0_1110_1110_1110111;
+					4:dotC=16'b0_1010_1010_1010101;
+					5:dotC=16'b0_1110_1110_1110111;
+					6:dotC=16'b0000_0000_0000_0000;
+					7:dotC=16'b0000_0000_0000_0000;
+				endcase
+			end
+		end
+	end
+	else if(!gameover)
 	begin
 		case(times)
 			0:
@@ -212,6 +364,37 @@ begin
 			end
 		endcase
 	end
+	else
+	begin
+		if(c6 == 1)
+		begin
+		case(c8)
+				0:dotR=8'b01111111;
+				1:dotR=8'b10111111;
+				2:dotR=8'b11011111;
+				3:dotR=8'b11101111;
+				4:dotR=8'b11110111;
+				5:dotR=8'b11111011;
+				6:dotR=8'b11111101;
+				7:dotR=8'b11111110;
+		endcase
+		case(c8)
+				0:dotC=16'b0111111001111110;
+				1:dotC=16'b0111111001111110;
+				2:dotC=16'b0000011000000110;
+				3:dotC=16'b0111011001110110;
+				4:dotC=16'b0111011001110110;
+				5:dotC=16'b0110011001100110;
+				6:dotC=16'b0111111001111110;
+				7:dotC=16'b0111111001111110;
+		endcase
+	   end
+		else
+		begin
+			 dotR = 8'b11111111;
+			 dotC = 0;
+		end
+	end
 end
 
 /*gameover*/
@@ -222,6 +405,7 @@ begin
 		gameover = 0;
 		State = S0;
 		typeGameover = 0;
+		win = 0;
 	end
 	else
 	begin
@@ -231,15 +415,19 @@ begin
 			State = S8;
 			typeGameover = 1;
 		end
+		else if(pos == -1-(1<<87))
+		begin
+			win = 1;
+			State = S9;
+		end
 		else
 		begin
 			State = NextState;
 			typeGameover = 0;
+			gameover = 0;
 		end
 	end
 end
-
-
 	
 /*create 10 KHz*/
 always @(negedge reset or posedge clock)
@@ -308,7 +496,7 @@ begin
 	end
 	else
 	begin
-		if(stop == 1 && gameover != 1)
+		if(stop == 1 && gameover != 1 && win != 1)
 		begin
 			tmp1 = tmp1+1;
 			if(tmp1 == 10)
@@ -825,157 +1013,3 @@ reg [3:0]out;
 		endcase
 	end
 endmodule 
-
-//module VGA(clk, rst, vga_hs, vga_vs, vga_r, vga_g, vga_b, type, typeGameover);
-//
-//input clk, rst;
-//input [2:0]type;
-//input typeGameover;
-//output vga_hs, vga_vs;
-//output [3:0] vga_r, vga_g, vga_b;
-//
-//reg vga_hs, vga_vs;
-//reg [3:0] vga_r, vga_g, vga_b;
-////reg [2:0]type;
-////reg typeGameover;
-//reg [10:0] counths;
-//reg [9:0] countvs;
-//reg [9:0] p_h, p_v;
-//reg valid;
-
-//always@(posedge clk or negedge rst)
-//begin
-//	if(!rst)
-//	begin
-//		counths <= 11'd0;
-//		countvs <= 10'd0;
-//	end
-//	else
-//	begin
-//		counths <= (counths == 11'd1600) ? 11'd0 : counths + 16'd1;
-//		countvs <= (countvs == 10'd525) ? 10'd0 : (counths == 11'd1600) ? countvs + 10'd1 : countvs; 
-//	end
-//end
-//
-//always@(posedge clk or negedge rst)
-//begin
-//	if(!rst)
-//	begin
-//		vga_hs <= 1'b0;
-//		vga_vs <= 1'b0;
-//		valid <= 1'b0;
-//	end
-//	else
-//	begin
-//		vga_hs <= (counths < 11'd192 || counths > 11'd1568) ? 1'b0 : 1'b1;
-//		vga_vs <= (countvs < 10'd2 || countvs > 10'd515) ? 1'b0 : 1'b1;
-//		valid <= (countvs > 10'd35 && countvs < 10'd516 && counths > 11'd288 && counths < 11'd1568) ? 1'b1 : 1'b0;
-//	end
-//end
-//
-//always@(posedge clk or negedge rst)
-//begin
-//	if(!rst)
-//	begin
-////		type <= 0;
-//		vga_r <= 4'd0;
-//		vga_g <= 4'd0;
-//		vga_b <= 4'd0;
-//	end
-//	else
-//	begin
-//		if(valid)
-//		begin
-//			if(type == 1)
-//			begin
-//				if(8*(countvs-35-240)*(countvs-275) + 3*(counths-288-640)*(counths-288-640) < 432900 && 8*(countvs-35-240)*(countvs-275) + 3*(counths-288-640)*(counths-288-640) > 156300)
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd15;
-//					vga_b <= 4'd0;
-//				end
-//				else
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//			end
-////			if((((countvs-100)-(counths-928)>0) && ((countvs-500)-(counths-928)<0)) || (((countvs-245)+(counths-928)<0) && ((countvs-305)+(counths-928)>0)))
-////			if((countvs>35) && (countvs<515) && ((countvs-275)-(counths-800)>0) )
-//			else if(typeGameover == 1)
-//			begin
-//				if((countvs - counths + 683 +  928 > 928) && (countvs - counths + 623 +  928 < 928) || (countvs + counths - 1173 +  928 > 928) && (countvs + counths - 1233 +  928 < 928))
-//				begin
-//					vga_r <= 4'd15;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//				else
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//			end
-//			else if(type == 3)
-//			begin
-//				if(8*17*(countvs-275)*(countvs-275)-5*16*(countvs-275)*(counths<928? (counths-928) :928-counths)+3*17*(counths-928)*(counths-928) < 1000000)
-//				begin
-//					vga_r <= 4'd15;
-//					vga_g <= 4'd8;
-//					vga_b <= 4'd11;
-//				end
-//				else
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//			end
-//			else if(type == 4)
-//			begin
-//				if(8*17*(countvs-275)*(countvs-275)-5*16*(countvs-275)*(counths<928? (counths-928) :928-counths)+3*17*(counths-928)*(counths-928) < 1000000)
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//				else
-//				begin
-//					vga_r <= 4'd15;
-//					vga_g <= 4'd15;
-//					vga_b <= 4'd15;
-//				end
-//			end
-//			else if(type == 5)
-//			begin
-//				if((countvs < 335 && countvs > 215 || counths < 988 && counths > 868) && (countvs > 245 || counths > 898))//8*17*(countvs-275)*(countvs-275)-5*16*(countvs-275)*(counths<928? (counths-928) :928-counths)+3*17*(counths-928)*(counths-928) < 1000000)
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd15;
-//				end
-//				else
-//				begin
-//					vga_r <= 4'd0;
-//					vga_g <= 4'd0;
-//					vga_b <= 4'd0;
-//				end
-//			end
-//			else
-//			begin
-//				vga_r <= 4'd0;
-//				vga_g <= 4'd0;
-//				vga_b <= 4'd0;
-//			end
-//		end
-//		else
-//		begin			
-//			vga_r <= 4'd0;
-//			vga_g <= 4'd0;
-//			vga_b <= 4'd0;
-//		end
-//	end
-//end
-//endmodule

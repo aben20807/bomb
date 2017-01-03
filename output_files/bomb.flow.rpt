@@ -1,5 +1,5 @@
 Flow report for bomb
-Wed Jan 04 02:09:35 2017
+Wed Jan 04 03:54:17 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jan 04 02:09:35 2017       ;
+; Flow Status                     ; Successful - Wed Jan 04 03:54:17 2017       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; bomb                                        ;
 ; Top-level Entity Name           ; bomb                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,040 / 18,480 ( 6 % )                      ;
-; Total registers                 ; 612                                         ;
+; Logic utilization (in ALMs)     ; 1,182 / 18,480 ( 6 % )                      ;
+; Total registers                 ; 771                                         ;
 ; Total pins                      ; 108 / 224 ( 48 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/04/2017 02:07:08 ;
+; Start date & time ; 01/04/2017 03:50:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bomb                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1098185953402.148346682808160 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1098185953402.148347305608832 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)     ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                          ; --            ; --          ; eda_simulation ;
@@ -97,12 +97,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 927 MB              ; 00:00:31                           ;
-; Fitter                    ; 00:01:42     ; 1.2                     ; 2085 MB             ; 00:03:05                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 916 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:14     ; 1.4                     ; 1196 MB             ; 00:00:19                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 869 MB              ; 00:00:02                           ;
-; Total                     ; 00:02:21     ; --                      ; --                  ; 00:04:01                           ;
+; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 930 MB              ; 00:00:34                           ;
+; Fitter                    ; 00:02:36     ; 1.1                     ; 2091 MB             ; 00:03:54                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 921 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:16     ; 1.4                     ; 1203 MB             ; 00:00:22                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 873 MB              ; 00:00:02                           ;
+; Total                     ; 00:03:17     ; --                      ; --                  ; 00:04:56                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
