@@ -1,4 +1,4 @@
-module bomb(reset, clock, button, stop, iwanttostep, isBomb, cancel, led, verf, verf1, keypadC, keypadR, dotC, dotR, hex1, hex2, hex3, hex4, hex5, hex6);
+module bomb(reset, clock, button, stop, iwanttostep, isBomb, cancel, led, verf, verf1, keypadC, keypadR, dotC, dotR, hex1, hex2, hex3, hex4, hex5, hex6, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
 
 input clock, reset, stop, cancel, isBomb, iwanttostep;
 input [3:0]button;
@@ -10,7 +10,11 @@ output [7:0]dotR;
 output [6:0]hex1, hex2, hex3, hex4, hex5, hex6;
 output [7:0]led;
 output verf, verf1;
+output VGA_HS, VGA_VS;
+output [3:0]VGA_R, VGA_G, VGA_B;
 
+wire VGA_HS, VGA_VS;
+wire [3:0]VGA_R, VGA_G, VGA_B;
 reg [15:0]dotC;
 reg [7:0]dotR;
 reg [31:0]cnt1, cnt2, cnt3;//1s, 10k, 0.5s
@@ -34,6 +38,7 @@ parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, S5 = 5, S6 = 6, S7 = 7, S8 = 8
 assign verf1 = verf;
 
 key(.clk(clock), .rst(reset), .Data(index), .keypadRow(keypadR), .keypadCol(keypadC), .KEY(K));
+VGA(.clk(clock), .rst(reset), .vga_hs(VGA_HS), .vga_vs(VGA_VS), .vga_r(VGA_R), .vga_g(VGA_G), .vga_b(VGA_B));
 
 /*scan all rows using 10 KHz*/
 always @(negedge reset or posedge div_clk_10k)
@@ -75,9 +80,15 @@ begin
 				second <= 1;
 				verf <= ~verf;
 			end
-			else if(isBomb == 1 && pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] != 1)//bug2 fixed
+			else if(isBomb == 1 && pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] != 1 && twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] == 0)//bug2 fixed
 			begin
 				twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 1;
+				second <= 0;
+				verf <= ~verf;
+			end
+			else if(isBomb == 1 && pos[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] != 1 && twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] == 1)//bug2 fixed
+			begin
+				twink[16*((index/4)+(State/4)*4)+4*(State%4)+index%4] <= 0;
 				second <= 0;
 				verf <= ~verf;
 			end
@@ -631,3 +642,119 @@ reg [3:0]out;
 		endcase
 	end
 endmodule 
+
+module VGA(clk, rst, vga_hs, vga_vs, vga_r, vga_g, vga_b);
+
+input clk, rst;
+output vga_hs, vga_vs;
+output [3:0] vga_r, vga_g, vga_b;
+
+reg vga_hs, vga_vs;
+reg [3:0] vga_r, vga_g, vga_b;
+
+reg [10:0] counths;
+reg [9:0] countvs;
+reg [9:0] p_h, p_v;
+reg valid;
+
+always@(posedge clk or negedge rst)
+begin
+	if(!rst)
+	begin
+		counths <= 11'd0;
+		countvs <= 10'd0;
+	end
+	else
+	begin
+		counths <= (counths == 11'd1600) ? 11'd0 : counths + 16'd1;
+		countvs <= (countvs == 10'd525) ? 10'd0 : (counths == 11'd1600) ? countvs + 10'd1 : countvs; 
+	end
+end
+
+always@(posedge clk or negedge rst)
+begin
+	if(!rst)
+	begin
+		vga_hs <= 1'b0;
+		vga_vs <= 1'b0;
+		valid <= 1'b0;
+	end
+	else
+	begin
+		vga_hs <= (counths < 11'd192 || counths > 11'd1568) ? 1'b0 : 1'b1;
+		vga_vs <= (countvs < 10'd2 || countvs > 10'd515) ? 1'b0 : 1'b1;
+		valid <= (countvs > 10'd35 && countvs < 10'd516 && counths > 11'd288 && counths < 11'd929) ? 1'b1 : 1'b0;
+	end
+end
+
+always@(posedge clk or negedge rst)
+begin
+	if(!rst)
+	begin
+		vga_r <= 4'd0;
+		vga_g <= 4'd0;
+		vga_b <= 4'd0;
+	end
+	else
+	begin
+		if(valid)
+		begin
+			if(countvs < 10'd95 && counths < 11'd250)
+			begin
+				vga_r <= 4'd0;
+				vga_g <= 4'd0;
+				vga_b <= 4'd15;
+			end
+			else if(countvs < 10'd155)
+			begin
+				vga_r <= 4'd0;
+				vga_g <= 4'd15;
+				vga_b <= 4'd0;
+			end
+			else if(countvs < 10'd215)
+			begin
+				vga_r <= 4'd0;
+				vga_g <= 4'd15;
+				vga_b <= 4'd15;
+			end
+			else if(countvs < 10'd275)
+			begin
+				vga_r <= 4'd15;
+				vga_g <= 4'd0;
+				vga_b <= 4'd0;
+			end
+			else if(countvs < 10'd335)
+			begin
+				vga_r <= 4'd15;
+				vga_g <= 4'd0;
+				vga_b <= 4'd15;
+			end
+			else if(countvs < 10'd395)
+			begin
+				vga_r <= 4'd15;
+				vga_g <= 4'd15;
+				vga_b <= 4'd0;
+			end
+			else if(countvs < 10'd455)
+			begin
+				vga_r <= 4'd15;
+				vga_g <= 4'd15;
+				vga_b <= 4'd15;
+			end
+			else
+			begin
+				vga_r <= 4'd0;
+				vga_g <= 4'd0;
+				vga_b <= 4'd0;
+			end
+		end
+		else
+		begin			
+			vga_r <= 4'd0;
+			vga_g <= 4'd0;
+			vga_b <= 4'd0;
+		end
+	end
+end
+
+endmodule

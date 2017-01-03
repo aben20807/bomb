@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Jan 03 17:34:49 2017
+Analysis & Synthesis Status : Successful - Tue Jan 03 21:01:45 2017
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : bomb
 Top-level Entity Name : bomb
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 531
-Total pins : 94
+Total registers : 567
+Total pins : 108
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
