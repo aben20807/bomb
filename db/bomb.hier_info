@@ -1,6 +1,6 @@
 |bomb
-reset => reset.IN6
-clock => clock.IN6
+reset => reset.IN5
+clock => clock.IN5
 button[0] => button[0].IN1
 button[1] => button[1].IN1
 button[2] => button[2].IN1
@@ -8,6 +8,11 @@ button[3] => button[3].IN1
 stop => second.OUTPUTSELECT
 stop => verf.OUTPUTSELECT
 stop => verf.OUTPUTSELECT
+stop => type.OUTPUTSELECT
+stop => type.OUTPUTSELECT
+stop => type.OUTPUTSELECT
+stop => type.OUTPUTSELECT
+stop => type.OUTPUTSELECT
 stop => twink.OUTPUTSELECT
 stop => twink.OUTPUTSELECT
 stop => twink.OUTPUTSELECT
@@ -264,34 +269,16 @@ stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
 stop => pos.OUTPUTSELECT
-stop => tmp1.OUTPUTSELECT
-stop => tmp1.OUTPUTSELECT
-stop => tmp1.OUTPUTSELECT
-stop => tmp1.OUTPUTSELECT
-stop => tmp2.OUTPUTSELECT
-stop => tmp2.OUTPUTSELECT
-stop => tmp2.OUTPUTSELECT
-stop => tmp2.OUTPUTSELECT
-stop => tmp3.OUTPUTSELECT
-stop => tmp3.OUTPUTSELECT
-stop => tmp3.OUTPUTSELECT
-stop => tmp3.OUTPUTSELECT
-stop => tmp4.OUTPUTSELECT
-stop => tmp4.OUTPUTSELECT
-stop => tmp4.OUTPUTSELECT
-stop => tmp4.OUTPUTSELECT
-stop => tmp5.OUTPUTSELECT
-stop => tmp5.OUTPUTSELECT
-stop => tmp5.OUTPUTSELECT
-stop => tmp5.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
-stop => tmp6.OUTPUTSELECT
+stop => always6.IN1
 stop => second.ENA
 iwanttostep => always1.IN1
 isBomb => always1.IN1
 cancel => verf.IN0
+cancel => type.101.OUTPUTSELECT
+cancel => type.100.OUTPUTSELECT
+cancel => type.011.OUTPUTSELECT
+cancel => type.001.OUTPUTSELECT
+cancel => type.000.OUTPUTSELECT
 cancel => pos[127].ENA
 cancel => pos[126].ENA
 cancel => pos[125].ENA
@@ -632,20 +619,20 @@ hex6[3] <= Seven:s6.sout
 hex6[4] <= Seven:s6.sout
 hex6[5] <= Seven:s6.sout
 hex6[6] <= Seven:s6.sout
-VGA_HS <= VGA:comb_5.vga_hs
-VGA_VS <= VGA:comb_5.vga_vs
-VGA_R[0] <= VGA:comb_5.vga_r
-VGA_R[1] <= VGA:comb_5.vga_r
-VGA_R[2] <= VGA:comb_5.vga_r
-VGA_R[3] <= VGA:comb_5.vga_r
-VGA_G[0] <= VGA:comb_5.vga_g
-VGA_G[1] <= VGA:comb_5.vga_g
-VGA_G[2] <= VGA:comb_5.vga_g
-VGA_G[3] <= VGA:comb_5.vga_g
-VGA_B[0] <= VGA:comb_5.vga_b
-VGA_B[1] <= VGA:comb_5.vga_b
-VGA_B[2] <= VGA:comb_5.vga_b
-VGA_B[3] <= VGA:comb_5.vga_b
+vga_hs <= vga_hs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_vs <= vga_vs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_r[0] <= vga_r[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_r[1] <= vga_r[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_r[2] <= vga_r[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_r[3] <= vga_r[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_g[0] <= vga_g[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_g[1] <= vga_g[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_g[2] <= vga_g[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_g[3] <= vga_g[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_b[0] <= vga_b[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_b[1] <= vga_b[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_b[2] <= vga_b[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vga_b[3] <= vga_b[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bomb|key:comb_4
@@ -746,95 +733,6 @@ out[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|VGA:comb_5
-clk => vga_b[0]~reg0.CLK
-clk => vga_b[1]~reg0.CLK
-clk => vga_b[2]~reg0.CLK
-clk => vga_b[3]~reg0.CLK
-clk => vga_g[0]~reg0.CLK
-clk => vga_g[1]~reg0.CLK
-clk => vga_g[2]~reg0.CLK
-clk => vga_g[3]~reg0.CLK
-clk => vga_r[0]~reg0.CLK
-clk => vga_r[1]~reg0.CLK
-clk => vga_r[2]~reg0.CLK
-clk => vga_r[3]~reg0.CLK
-clk => valid.CLK
-clk => vga_vs~reg0.CLK
-clk => vga_hs~reg0.CLK
-clk => countvs[0].CLK
-clk => countvs[1].CLK
-clk => countvs[2].CLK
-clk => countvs[3].CLK
-clk => countvs[4].CLK
-clk => countvs[5].CLK
-clk => countvs[6].CLK
-clk => countvs[7].CLK
-clk => countvs[8].CLK
-clk => countvs[9].CLK
-clk => counths[0].CLK
-clk => counths[1].CLK
-clk => counths[2].CLK
-clk => counths[3].CLK
-clk => counths[4].CLK
-clk => counths[5].CLK
-clk => counths[6].CLK
-clk => counths[7].CLK
-clk => counths[8].CLK
-clk => counths[9].CLK
-clk => counths[10].CLK
-rst => countvs[0].ACLR
-rst => countvs[1].ACLR
-rst => countvs[2].ACLR
-rst => countvs[3].ACLR
-rst => countvs[4].ACLR
-rst => countvs[5].ACLR
-rst => countvs[6].ACLR
-rst => countvs[7].ACLR
-rst => countvs[8].ACLR
-rst => countvs[9].ACLR
-rst => counths[0].ACLR
-rst => counths[1].ACLR
-rst => counths[2].ACLR
-rst => counths[3].ACLR
-rst => counths[4].ACLR
-rst => counths[5].ACLR
-rst => counths[6].ACLR
-rst => counths[7].ACLR
-rst => counths[8].ACLR
-rst => counths[9].ACLR
-rst => counths[10].ACLR
-rst => vga_b[0]~reg0.ACLR
-rst => vga_b[1]~reg0.ACLR
-rst => vga_b[2]~reg0.ACLR
-rst => vga_b[3]~reg0.ACLR
-rst => vga_g[0]~reg0.ACLR
-rst => vga_g[1]~reg0.ACLR
-rst => vga_g[2]~reg0.ACLR
-rst => vga_g[3]~reg0.ACLR
-rst => vga_r[0]~reg0.ACLR
-rst => vga_r[1]~reg0.ACLR
-rst => vga_r[2]~reg0.ACLR
-rst => vga_r[3]~reg0.ACLR
-rst => valid.ACLR
-rst => vga_vs~reg0.ACLR
-rst => vga_hs~reg0.ACLR
-vga_hs <= vga_hs~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_vs <= vga_vs~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_r[0] <= vga_r[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_r[1] <= vga_r[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_r[2] <= vga_r[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_r[3] <= vga_r[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_g[0] <= vga_g[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_g[1] <= vga_g[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_g[2] <= vga_g[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_g[3] <= vga_g[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_b[0] <= vga_b[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_b[1] <= vga_b[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_b[2] <= vga_b[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vga_b[3] <= vga_b[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |bomb|Seven:s1
 sin[0] => Decoder0.IN3
 sin[1] => Decoder0.IN2
@@ -919,7 +817,7 @@ sout[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 sout[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_4705
+|bomb|move:comb_5698
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -978,7 +876,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_4706
+|bomb|move:comb_5699
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -1037,7 +935,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_4707
+|bomb|move:comb_5700
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK
@@ -1096,7 +994,7 @@ button => always0.IN1
 LED <= LED~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bomb|move:comb_4708
+|bomb|move:comb_5701
 clk => delayButton[0].CLK
 clk => delayButton[1].CLK
 clk => delayButton[2].CLK

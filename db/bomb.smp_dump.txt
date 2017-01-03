@@ -1,11 +1,8 @@
 
-State Machine - |bomb|State
-Name State.S7 State.S6 State.S5 State.S4 State.S3 State.S2 State.S1 State.S0 
-State.S0 0 0 0 0 0 0 0 0 
-State.S1 0 0 0 0 0 0 1 1 
-State.S2 0 0 0 0 0 1 0 1 
-State.S3 0 0 0 0 1 0 0 1 
-State.S4 0 0 0 1 0 0 0 1 
-State.S5 0 0 1 0 0 0 0 1 
-State.S6 0 1 0 0 0 0 0 1 
-State.S7 1 0 0 0 0 0 0 1 
+State Machine - |bomb|type
+Name type.101 type.100 type.001 type.000 type.011 
+type.000 0 0 0 0 0 
+type.001 0 0 1 1 0 
+type.011 0 0 0 1 1 
+type.100 0 1 0 1 0 
+type.101 1 0 0 1 0 
